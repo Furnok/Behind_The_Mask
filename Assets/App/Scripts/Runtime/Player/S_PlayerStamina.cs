@@ -69,6 +69,8 @@ public class S_PlayerStamina : MonoBehaviour
         }
         else
         {
+            _wantsSprint = false;
+
             if (_recoveryTimer > 0f)
             {
                 _recoveryTimer -= Time.deltaTime;
