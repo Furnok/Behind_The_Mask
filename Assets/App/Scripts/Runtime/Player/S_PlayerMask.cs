@@ -23,15 +23,15 @@ public class S_PlayerMask : MonoBehaviour
         _playerCurrentMaskUnlocked.Value.Add(Mask.GreenMask, false);
         _playerCurrentMaskUnlocked.Value.Add(Mask.RedMask, false);
 
-        AddAllMAsk(); // For testing purposes, add all masks at start
+        //AddAllMAsk(); // For testing purposes, add all masks at start
 
         _playerCurrentMaskEquipped.Value = Mask.None;
     }
 
     private void OnEnable()
     {
-        _onMask1Input.action += OnMaskRedInput;
-        _onMask2Input.action += OnMaskGreenInput;
+        _onMask1Input.action += OnMaskGreenInput;
+        _onMask2Input.action += OnMaskRedInput;
         _onMask3Input.action += OnMaskBlueInput;
 
         _onPickUpMask.action += AddMask;
@@ -39,8 +39,8 @@ public class S_PlayerMask : MonoBehaviour
 
     private void OnDisable()
     {
-        _onMask1Input.action -= OnMaskRedInput;
-        _onMask2Input.action -= OnMaskGreenInput;
+        _onMask1Input.action -= OnMaskGreenInput;
+        _onMask2Input.action -= OnMaskRedInput;
         _onMask3Input.action -= OnMaskBlueInput;
 
         _onPickUpMask.action -= AddMask;
@@ -51,7 +51,20 @@ public class S_PlayerMask : MonoBehaviour
 
     void AddMask(Mask mask)
     {
-        _playerCurrentMaskUnlocked.Value[mask] = true;
+        if (mask == Mask.None) return;
+
+        if (!_playerCurrentMaskUnlocked.Value.ContainsKey(mask))
+        {
+            _playerCurrentMaskUnlocked.Value.Add(mask, true);
+        }
+        else if (_playerCurrentMaskUnlocked.Value[mask] == false)
+        {
+            _playerCurrentMaskUnlocked.Value[mask] = true;
+        }
+        else
+        {
+            
+        }
     }
 
     void AddAllMAsk()
