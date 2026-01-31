@@ -12,6 +12,13 @@ public class S_UIGameManager : MonoBehaviour
     [SerializeField] private CanvasGroup gameCanvasGroup;
 
     [TabGroup("References")]
+    [Title("Game Window")]
+    [SerializeField] private GameObject bookWindow;
+
+    [TabGroup("References")]
+    [SerializeField] private CanvasGroup bookCanvasGroup;
+
+    [TabGroup("References")]
     [Title("Main Menu Window")]
     [SerializeField] private GameObject menuWindow;
 
@@ -67,7 +74,7 @@ public class S_UIGameManager : MonoBehaviour
     private void OnEnable()
     {
         rseOnMenu.action += SetupMenu;
-        rseOnGame.action += SetupGame;
+        rseOnGame.action += DisplayGame;
         rseOnOpenWindow.action += AlreadyOpen;
         rseOnCloseWindow.action += CloseWindow;
         rseOnCloseAllWindows.action += CloseAllWindows;
@@ -81,7 +88,7 @@ public class S_UIGameManager : MonoBehaviour
     private void OnDisable()
     {
         rseOnMenu.action -= SetupMenu;
-        rseOnGame.action -= SetupGame;
+        rseOnGame.action -= DisplayGame;
         rseOnOpenWindow.action -= AlreadyOpen;
         rseOnCloseWindow.action -= CloseWindow;
         rseOnCloseAllWindows.action -= CloseAllWindows;
@@ -121,7 +128,7 @@ public class S_UIGameManager : MonoBehaviour
         }));
     }
 
-    private void SetupGame()
+    private void DisplayGame()
     {
         fadeWindow.SetActive(true);
 
@@ -139,6 +146,11 @@ public class S_UIGameManager : MonoBehaviour
                 });
             }));
         }));
+    }
+
+    private void DisplayBook()
+    {
+
     }
 
     private void AlreadyOpen(GameObject window)
