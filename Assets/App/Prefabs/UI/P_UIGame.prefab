@@ -644,6 +644,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0
@@ -654,6 +655,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0
@@ -987,6 +989,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0
@@ -997,6 +1000,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0
@@ -1366,6 +1370,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0
@@ -1376,6 +1381,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0
@@ -2343,6 +2349,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0
@@ -2353,6 +2360,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0
@@ -2584,6 +2592,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0

@@ -8,21 +8,22 @@ public class S_AudioSource : MonoBehaviour
     [Title("Audio")]
     [SerializeField] private AudioSource audioSource;
 
+    [HideInInspector] public bool canPause = true;
+
     private S_AudioManager currentAudioManager = null;
 
-    private void OnEnable()
-    {
-        StartCoroutine(S_Utils.DelayFrame(() => StartCoroutine(AutoDestroyAfterAudio())));
-    }
-
-    public void Setup(S_AudioManager audioManager)
+    public void Setup(S_AudioManager audioManager, bool value)
     {
         currentAudioManager = audioManager;
+        canPause = value;
+
+        StartCoroutine(S_Utils.DelayFrame(() => StartCoroutine(AutoDestroyAfterAudio())));
     }
 
     private IEnumerator AutoDestroyAfterAudio()
     {
-        yield return new WaitForSeconds(audioSource.clip.length);
+        if (canPause) yield return new WaitForSeconds(audioSource.clip.length);
+        else yield return new WaitForSecondsRealtime(audioSource.clip.length);
 
         currentAudioManager.UpdateList(audioSource);
 

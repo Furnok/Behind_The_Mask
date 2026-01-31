@@ -27,18 +27,23 @@ public class S_AudioManager : MonoBehaviour
     [TabGroup("Inputs")]
     [SerializeField] private RSE_StopAllAudio rseStopAllAudio;
 
+    [TabGroup("Inputs")]
+    [SerializeField] private RSE_OnGamePause rseGamePause;
+
     private List<AudioSource> activeAudioSources = new();
 
     private void OnEnable()
     {
         rsePlayAudio.action += PlayAudio;
         rseStopAllAudio.action += StopAllAudios;
+        rseGamePause.action += PauseAudios;
     }
 
     private void OnDisable()
     {
         rsePlayAudio.action -= PlayAudio;
         rseStopAllAudio.action -= StopAllAudios;
+        rseGamePause.action -= PauseAudios;
     }
 
     private void PlayAudio(S_ClassAudio classAudio)
@@ -58,7 +63,7 @@ public class S_AudioManager : MonoBehaviour
         audioSource.maxDistance = classAudio.maxDistance;
 
         S_AudioSource script = audioObj.GetComponent<S_AudioSource>();
-        script.Setup(this);
+        script.Setup(this, classAudio.canPause);
 
         if (classAudio.fade)
         {
@@ -107,6 +112,21 @@ public class S_AudioManager : MonoBehaviour
             if (audioSource != null)
             {
                 FadeOutAudio(audioSource);
+            }
+        }
+    }
+
+    private void PauseAudios(bool value)
+    {
+        foreach (AudioSource audioSource in activeAudioSources)
+        {
+            if (audioSource != null)
+            {
+                if (audioSource.GetComponent<S_AudioSource>().canPause)
+                {
+                    if (value) audioSource.Pause();
+                    else audioSource.UnPause();
+                }
             }
         }
     }

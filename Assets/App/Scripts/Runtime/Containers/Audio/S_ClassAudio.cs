@@ -16,6 +16,8 @@ public class S_ClassAudio
 
     public bool loop = false;
 
+    public bool canPause = true;
+
     [Title("Position")]
     public Vector3 position = Vector3.zero;
 

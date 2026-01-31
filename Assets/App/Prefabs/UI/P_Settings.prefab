@@ -779,11 +779,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 1882966372231155587}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
@@ -1634,6 +1646,12 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   slider: {fileID: 862861834517362492}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
 --- !u!114 &898245691497376646
@@ -1659,11 +1677,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 1948319199733648271}
   - {fileID: 9120654821090995690}
@@ -2265,6 +2295,12 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   slider: {fileID: 4654412397453963912}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
 --- !u!114 &7937308109650536963
@@ -2290,11 +2326,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 5591026217203008569}
   - {fileID: 4136303626377569575}
@@ -2915,11 +2963,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 3669173615521639698}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
@@ -3539,11 +3599,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioWindow:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   dropDownResolutions: {fileID: 5640465621008990194}
   settings: {fileID: 8651831841600894148}
   rseOnEscapeInput: {fileID: 11400000, guid: 59753f43be0f3f64381174235d4e6bea, type: 2}
@@ -3889,6 +3961,12 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   slider: {fileID: 1059136623692681582}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
 --- !u!114 &806535335950207637
@@ -3914,11 +3992,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 6322909052528780221}
   - {fileID: 5784720904958989014}
@@ -4784,11 +4874,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 5960552435978159843}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
@@ -5293,11 +5395,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 8547746334033951929}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
@@ -6546,11 +6660,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 4492421885108693023}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
@@ -6879,11 +7005,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 8310061951638076015}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
@@ -7268,11 +7406,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 8348123702559843222}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
@@ -7744,6 +7894,12 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   slider: {fileID: 8509714299955800645}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
 --- !u!114 &3844482785233680225
@@ -7769,11 +7925,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioHover:
     clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
     mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 0
     loop: 0
+    canPause: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   images:
   - {fileID: 6860972776868143878}
   - {fileID: 5615973001498760995}

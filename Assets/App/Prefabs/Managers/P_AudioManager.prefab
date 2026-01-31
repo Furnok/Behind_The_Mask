@@ -50,3 +50,4 @@ MonoBehaviour:
   audioSourcePrefab: {fileID: 7044789291307781648, guid: ef2c1b4e3acbc34409e52ad7a590e559, type: 3}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   rseStopAllAudio: {fileID: 11400000, guid: 9f87ef9a82d192e4b93ecf8bb4b75785, type: 2}
+  rseGamePause: {fileID: 11400000, guid: 0227ae7847beac54396feb1b837a19a8, type: 2}

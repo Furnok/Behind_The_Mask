@@ -51,6 +51,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 2146873307849394114, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 1
     loop: 1
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0
@@ -61,6 +62,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 2146873307849394114, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 1
     loop: 1
+    canPause: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
     is3D: 0
