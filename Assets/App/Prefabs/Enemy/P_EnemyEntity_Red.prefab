@@ -48,13 +48,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3900464742259254443, guid: fdb505db8d023d5458762c4c7a79a562, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 802eff6cb783aaa45bf08fa031fb0ba9, type: 2}
     - target: {fileID: 4279362412266701553, guid: fdb505db8d023d5458762c4c7a79a562, type: 3}
       propertyPath: _enemyMask
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7989054331365211250, guid: fdb505db8d023d5458762c4c7a79a562, type: 3}
       propertyPath: m_Name
-      value: P_EnemyEntity_01 Variant
+      value: P_EnemyEntity_Red
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
