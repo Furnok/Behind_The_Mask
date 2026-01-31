@@ -22,7 +22,7 @@ public class S_AudioSource : MonoBehaviour
 
     private IEnumerator AutoDestroyAfterAudio()
     {
-        yield return new WaitWhile(() => audioSource.isPlaying);
+        yield return new WaitForSeconds(audioSource.clip.length);
 
         currentAudioManager.UpdateList(audioSource);
 
