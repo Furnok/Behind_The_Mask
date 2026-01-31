@@ -18,4 +18,9 @@ public struct S_StructPlayerSettings
     public float MaxPitchAngle;
     public float MinPitchAngle;
     public float Sensitivity;
+
+    [Header("Camera FOV Settings")]
+    public float NormalFOV;
+    public float SprintFOV;
+    public float SmoothTimeFOV;
 }

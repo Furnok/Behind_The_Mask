@@ -22,3 +22,6 @@ MonoBehaviour:
     MaxPitchAngle: 60
     MinPitchAngle: -60
     Sensitivity: 1
+    NormalFOV: 60
+    SprintFOV: 75
+    SmoothTimeFOV: 0.15
