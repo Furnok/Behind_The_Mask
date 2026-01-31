@@ -736,8 +736,19 @@ MonoBehaviour:
   colorMouseDown:
     serializedVersion: 2
     rgba: 3372220415
+  audioClick:
+    clip: {fileID: 8300000, guid: 6b6b973d60e6b1e45af78fc46a5bc392, type: 3}
+    mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
+  audioHover:
+    clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
+    mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
   images:
   - {fileID: 8001854904093038790}
+  rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
   ssoButtonTransitionTime: {fileID: 11400000, guid: 0373d13098d1f714dbcd33c605a4f5f0, type: 2}
 --- !u!1 &2746848095939924536
@@ -1535,8 +1546,19 @@ MonoBehaviour:
   colorMouseDown:
     serializedVersion: 2
     rgba: 3372220415
+  audioClick:
+    clip: {fileID: 8300000, guid: 6b6b973d60e6b1e45af78fc46a5bc392, type: 3}
+    mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
+  audioHover:
+    clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
+    mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
   images:
   - {fileID: 4060795719555398794}
+  rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
   ssoButtonTransitionTime: {fileID: 11400000, guid: 0373d13098d1f714dbcd33c605a4f5f0, type: 2}
 --- !u!1 &6486350318755795548
@@ -2212,8 +2234,19 @@ MonoBehaviour:
   colorMouseDown:
     serializedVersion: 2
     rgba: 3372220415
+  audioClick:
+    clip: {fileID: 8300000, guid: 6b6b973d60e6b1e45af78fc46a5bc392, type: 3}
+    mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
+  audioHover:
+    clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
+    mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
   images:
   - {fileID: 6605620178501464561}
+  rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
   ssoButtonTransitionTime: {fileID: 11400000, guid: 0373d13098d1f714dbcd33c605a4f5f0, type: 2}
 --- !u!1 &8761149327209956079
@@ -2530,8 +2563,19 @@ MonoBehaviour:
   colorMouseDown:
     serializedVersion: 2
     rgba: 3372220415
+  audioClick:
+    clip: {fileID: 8300000, guid: 6b6b973d60e6b1e45af78fc46a5bc392, type: 3}
+    mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
+  audioHover:
+    clip: {fileID: 8300000, guid: d64bcbac3aa467d4babcca059120eefb, type: 3}
+    mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
   images:
   - {fileID: 4480191868886106846}
+  rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
   ssoButtonTransitionTime: {fileID: 11400000, guid: 0373d13098d1f714dbcd33c605a4f5f0, type: 2}
 --- !u!1 &8982836891316874469

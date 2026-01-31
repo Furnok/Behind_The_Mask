@@ -14,16 +14,19 @@ public class S_UISelectable : MonoBehaviour
     [TabGroup("Settings")]
     [SerializeField] private Color32 colorMouseDown = new(150, 150, 150, 255);
 
-    [TabGroup("References")]
-    //[Title("Audio")]
-    //[SerializeField] private EventReference uiClick;
+    [TabGroup("Settings")]
+    [Title("Audio")]
+    [SerializeField] private S_ClassAudio audioClick;
 
-    //[TabGroup("References")]
-    //[SerializeField] private EventReference uiHover;
+    [TabGroup("Settings")]
+    [SerializeField] private S_ClassAudio audioHover;
 
     [TabGroup("References")]
     [Title("Images")]
     [SerializeField] private List<Image> images;
+
+    [TabGroup("Outputs")]
+    [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
     [TabGroup("Outputs")]
     [SerializeField] private RSO_Navigation rsoNavigation;
@@ -60,7 +63,7 @@ public class S_UISelectable : MonoBehaviour
     {
         if (uiElement.interactable)
         {
-            //RuntimeManager.PlayOneShot(uiHover);
+            rsePlayAudio.Call(audioHover);
 
             if (!isPressed) PlayColorTransition(colorMouseEnter);
 
@@ -72,7 +75,7 @@ public class S_UISelectable : MonoBehaviour
     {
         if (uiElement.interactable)
         {
-            //RuntimeManager.PlayOneShot(uiHover);
+            rsePlayAudio.Call(audioHover);
 
             if (!isPressed) ResetColorsToDefault(false);
 
@@ -106,7 +109,7 @@ public class S_UISelectable : MonoBehaviour
     {
         if (uiElement.interactable && Gamepad.current != null)
         {
-            //RuntimeManager.PlayOneShot(uiHover);
+            rsePlayAudio.Call(audioHover);
 
             PlayColorTransition(colorMouseEnter);
             rsoNavigation.Value.selectableFocus = uiElement;
@@ -130,7 +133,7 @@ public class S_UISelectable : MonoBehaviour
     {
         if (uiElement.interactable)
         {
-            //RuntimeManager.PlayOneShot(uiClick);
+            rsePlayAudio.Call(audioClick);
 
             if (Gamepad.current != null)
             {
@@ -154,7 +157,7 @@ public class S_UISelectable : MonoBehaviour
 
     public void PlayAudio(Selectable uiElement)
     {
-        //if (uiElement.interactable) RuntimeManager.PlayOneShot(uiClick);
+        if (uiElement.interactable) rsePlayAudio.Call(audioClick);
     }
 
     public void ClickedWindow(Selectable uiElement)
