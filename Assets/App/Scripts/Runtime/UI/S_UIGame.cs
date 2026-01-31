@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,13 @@ public class S_UIGame : MonoBehaviour
     [TabGroup("References")]
     [Title("Inventory")]
     [SerializeField] private List<Image> imageInventory;
+
+    [TabGroup("References")]
+    [Title("Masks")]
+    [SerializeField] private List<Sprite> spriteMasks;
+
+    [TabGroup("References")]
+    [SerializeField] private List<Sprite> spriteNoMasks;
 
     [TabGroup("Inputs")]
     [SerializeField] private RSE_OnUpdateUIInventory rseOnUpdateUIInventory;
@@ -61,6 +69,18 @@ public class S_UIGame : MonoBehaviour
 
     private void UpdateInventory()
     {
-        //rsoPlayerCurrentMaskUnlocked
+        var values = rsoPlayerCurrentMaskUnlocked.Value.Values.ToList();
+
+        for (int i = 0; i < imageInventory.Count; i++)
+        {
+            if (values[i])
+            {
+                imageInventory[i].sprite = spriteMasks[i];
+            }
+            else
+            {
+                imageInventory[i].sprite = spriteNoMasks[i];
+            }
+        }
     }
 }

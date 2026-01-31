@@ -25,7 +25,7 @@ public class S_PlayerMask : MonoBehaviour
         _playerCurrentMaskUnlocked.Value.Add(Mask.GreenMask, false);
         _playerCurrentMaskUnlocked.Value.Add(Mask.RedMask, false);
 
-        AddAllMAsk(); // For testing purposes, add all masks at start
+        //AddAllMAsk(); // For testing purposes, add all masks at start
 
         _playerCurrentMaskEquipped.Value = Mask.None;
     }
@@ -58,19 +58,17 @@ public class S_PlayerMask : MonoBehaviour
         if (!_playerCurrentMaskUnlocked.Value.ContainsKey(mask))
         {
             _playerCurrentMaskUnlocked.Value.Add(mask, true);
-
-            rseOnUpdateUIInventory.Call();
         }
         else if (_playerCurrentMaskUnlocked.Value[mask] == false)
         {
             _playerCurrentMaskUnlocked.Value[mask] = true;
-
-            rseOnUpdateUIInventory.Call();
         }
         else
         {
             
         }
+
+        rseOnUpdateUIInventory.Call();
     }
 
     void AddAllMAsk()
