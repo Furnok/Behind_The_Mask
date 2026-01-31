@@ -23,7 +23,7 @@ public class S_PlayerMask : MonoBehaviour
         _playerCurrentMaskUnlocked.Value.Add(Mask.GreenMask, false);
         _playerCurrentMaskUnlocked.Value.Add(Mask.RedMask, false);
 
-        //AddAllMAsk(); // For testing purposes, add all masks at start
+        AddAllMAsk(); // For testing purposes, add all masks at start
 
         _playerCurrentMaskEquipped.Value = Mask.None;
     }
