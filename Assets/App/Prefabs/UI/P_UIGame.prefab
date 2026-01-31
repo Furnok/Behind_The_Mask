@@ -5158,8 +5158,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772de0732034de145a603350430bc854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorFocus:
+    serializedVersion: 2
+    rgba: 4278190335
+  colorUnFocus:
+    serializedVersion: 2
+    rgba: 4279505940
   sliderStamina: {fileID: 845074167530369111}
   imageBook: {fileID: 5329524359584567121}
+  imageInventorySlot:
+  - {fileID: 1898779217188257971}
+  - {fileID: 7902804706771986863}
+  - {fileID: 6808912118965671952}
   imageInventory:
   - {fileID: 3629428371721747184}
   - {fileID: 6971517933107815731}

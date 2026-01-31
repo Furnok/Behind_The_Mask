@@ -7,6 +7,13 @@ using UnityEngine.UI;
 
 public class S_UIGame : MonoBehaviour
 {
+    [TabGroup("Settings")]
+    [Title("Colors")]
+    [SerializeField] private Color32 colorFocus;
+
+    [TabGroup("Settings")]
+    [SerializeField] private Color32 colorUnFocus;
+
     [TabGroup("References")]
     [Title("Sliders")]
     [SerializeField] private Slider sliderStamina;
@@ -17,6 +24,9 @@ public class S_UIGame : MonoBehaviour
 
     [TabGroup("References")]
     [Title("Inventory")]
+    [SerializeField] private List<Image> imageInventorySlot;
+
+    [TabGroup("References")]
     [SerializeField] private List<Image> imageInventory;
 
     [TabGroup("References")]
@@ -45,6 +55,8 @@ public class S_UIGame : MonoBehaviour
     [SerializeField] private SSO_SliderTime ssoSliderTime;
 
     private Tween staminaTween = null;
+
+    private int maskIndex = -1;
 
     private void Awake()
     {
@@ -91,6 +103,19 @@ public class S_UIGame : MonoBehaviour
 
     private void UpdateFocus(int index)
     {
+        for (int i = 0; i < imageInventorySlot.Count; i++)
+        {
+            imageInventorySlot[i].color = colorUnFocus;
+        }
 
+        if (maskIndex != index)
+        {
+            imageInventorySlot[index].color = colorFocus;
+            maskIndex = index;
+        }
+        else
+        {
+            maskIndex = -1;
+        }
     }
 }
