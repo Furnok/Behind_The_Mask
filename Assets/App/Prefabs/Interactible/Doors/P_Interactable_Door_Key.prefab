@@ -89,6 +89,7 @@ MonoBehaviour:
   _ease: 9
   _doorVisuals: {fileID: 4673518318237925851}
   _haveKey: {fileID: 11400000, guid: 40caf487fba95204bbe2d41c42776d52, type: 2}
+  rseOnUIError: {fileID: 11400000, guid: 3df7eb861fac667478af979178cbad2b, type: 2}
 --- !u!1 &4673518318237925851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4959285282971737744, guid: cac0661d723da794fa4bdac411fa3882, type: 3}

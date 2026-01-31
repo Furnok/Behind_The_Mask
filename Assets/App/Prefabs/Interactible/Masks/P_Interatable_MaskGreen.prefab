@@ -49,8 +49,10 @@ MonoBehaviour:
   _priority: 0
   _isInteractable: 1
   _maskType: 2
+  colliderMask: {fileID: 3902723346943405391}
   _maskVisuals: {fileID: 7549224160467986789}
   _onPickUpMask: {fileID: 11400000, guid: 8416929ac1dc3e944acd0a0c2c62507c, type: 2}
+  rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
 --- !u!135 &3902723346943405391
 SphereCollider:
   m_ObjectHideFlags: 0

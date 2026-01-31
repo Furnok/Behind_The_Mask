@@ -17,6 +17,7 @@ public class S_DoorInteractible_Key : MonoBehaviour, IInteractable
 
     [Header("Outputs")]
     [SerializeField] RSO_HaveKey _haveKey;
+    [SerializeField] private RSE_OnUIError rseOnUIError;
 
     public int Priority => _priority;
     public Transform Transform => transform;
@@ -43,6 +44,10 @@ public class S_DoorInteractible_Key : MonoBehaviour, IInteractable
             //_doorVisuals.SetActive(false); // Simulate door opening by disabling visuals for now
 
             Open();
+        }
+        else
+        {
+            rseOnUIError.Call("You don't have the Key!");
         }
     }
 

@@ -49,7 +49,9 @@ MonoBehaviour:
   _priority: 0
   _isInteractable: 1
   _keyVisuals: {fileID: 7908326332913090553}
+  colliderkey: {fileID: 7814052791176620737}
   _haveKey: {fileID: 11400000, guid: 40caf487fba95204bbe2d41c42776d52, type: 2}
+  rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
 --- !u!135 &7814052791176620737
 SphereCollider:
   m_ObjectHideFlags: 0

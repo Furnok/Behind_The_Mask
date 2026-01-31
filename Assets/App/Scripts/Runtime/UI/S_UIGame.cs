@@ -1,8 +1,9 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.PackageManager.UI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +32,16 @@ public class S_UIGame : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroupInteract;
 
     [TabGroup("References")]
+    [Title("Error")]
+    [SerializeField] private GameObject objError;
+
+    [TabGroup("References")]
+    [SerializeField] private CanvasGroup canvasGroupError;
+
+    [TabGroup("References")]
+    [SerializeField] private TextMeshProUGUI textError;
+
+    [TabGroup("References")]
     [Title("Inventory")]
     [SerializeField] private List<Image> imageInventorySlot;
 
@@ -54,6 +65,9 @@ public class S_UIGame : MonoBehaviour
     [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
 
     [TabGroup("Inputs")]
+    [SerializeField] private RSE_OnUIError rseOnUIError;
+
+    [TabGroup("Inputs")]
     [SerializeField] private RSO_CurrentStamina rsoSetStaminaSliderValue;
 
     [TabGroup("Outputs")]
@@ -69,7 +83,10 @@ public class S_UIGame : MonoBehaviour
     [SerializeField] private SSO_DisplayWindowTime ssoDisplayWindowTime;
 
     private Tween interactTween = null;
+    private Tween errorTween = null;
     private Tween staminaTween = null;
+
+    private Coroutine errorCoroutine = null;
 
     private int maskIndex = -1;
 
@@ -84,6 +101,7 @@ public class S_UIGame : MonoBehaviour
         rsoSetStaminaSliderValue.onValueChanged += SetStaminaSliderValue;
         rseOnEquippedMaskUI.action += UpdateFocus;
         rseOnUIInterract.action += DisplayInteract;
+        rseOnUIError.action += DisplayError;
     }
 
     private void OnDisable()
@@ -92,6 +110,7 @@ public class S_UIGame : MonoBehaviour
         rsoSetStaminaSliderValue.onValueChanged -= SetStaminaSliderValue;
         rseOnEquippedMaskUI.action -= UpdateFocus;
         rseOnUIInterract.action -= DisplayInteract;
+        rseOnUIError.action -= DisplayError;
     }
 
     private void SetStaminaSliderValue(float value)
@@ -154,5 +173,41 @@ public class S_UIGame : MonoBehaviour
                 objInteract.SetActive(false);
             });
         }
+    }
+
+    private void DisplayError(string text)
+    {
+        if (errorCoroutine != null)
+        {
+            StopCoroutine(errorCoroutine);
+            errorCoroutine = null;
+
+            objError.SetActive(false);
+            textError.text = "";
+            canvasGroupError.alpha = 0f;
+        }
+
+        errorTween?.Kill();
+
+        errorTween = canvasGroupError.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
+        {
+            objError.SetActive(true);
+            textError.text = text;
+
+        }).OnComplete(() =>
+        {
+            errorCoroutine = StartCoroutine(DisplayTime());
+        });
+    }
+
+    private IEnumerator DisplayTime()
+    {
+        yield return new WaitForSeconds(3f);
+
+        errorTween = canvasGroupError.DOFade(0f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnComplete(() =>
+        {
+            objError.SetActive(false);
+            textError.text = "";
+        });
     }
 }

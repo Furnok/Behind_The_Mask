@@ -6,6 +6,7 @@ public class S_MaskInteractible : MonoBehaviour, IInteractable
     [SerializeField] int _priority = 0;
     [SerializeField] bool _isInteractable = true;
     [SerializeField] Mask _maskType;
+    [SerializeField] SphereCollider colliderMask;
 
     [Header("References")]
     [SerializeField] GameObject _maskVisuals;
@@ -14,6 +15,7 @@ public class S_MaskInteractible : MonoBehaviour, IInteractable
 
     [Header("Outputs")]
     [SerializeField] RSE_OnPickUpMask _onPickUpMask;
+    [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
 
     public int Priority => _priority;
     public Transform Transform => transform;
@@ -27,6 +29,8 @@ public class S_MaskInteractible : MonoBehaviour, IInteractable
             _onPickUpMask.Call(_maskType);
             _isInteractable = false;
             _maskVisuals.SetActive(false);
+            colliderMask.enabled = false;
+            rseOnUIInterract.Call(false);
         }
     }
 }

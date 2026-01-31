@@ -162,6 +162,7 @@ MonoBehaviour:
   _ease: 9
   _doorVisuals: {fileID: 4959285282971737744}
   _playerCurrentMaskEquipped: {fileID: 11400000, guid: 8294228d4caf6864e82b8769fc045881, type: 2}
+  rseOnUIError: {fileID: 11400000, guid: 3df7eb861fac667478af979178cbad2b, type: 2}
 --- !u!65 &2803194466658797573
 BoxCollider:
   m_ObjectHideFlags: 0

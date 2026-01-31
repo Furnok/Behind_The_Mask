@@ -18,6 +18,7 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
 
     [Header("Outputs")]
     [SerializeField] RSO_PlayerCurrentMaskEquipped _playerCurrentMaskEquipped;
+    [SerializeField] private RSE_OnUIError rseOnUIError;
 
     public int Priority => _priority;
     public Transform Transform => transform;
@@ -45,6 +46,10 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
 
             Open();
 
+        }
+        else
+        {
+            rseOnUIError.Call("You don't have the right Mask!");
         }
     }
 

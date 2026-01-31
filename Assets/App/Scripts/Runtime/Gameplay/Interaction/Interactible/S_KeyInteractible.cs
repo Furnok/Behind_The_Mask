@@ -8,11 +8,14 @@ public class S_KeyInteractible : MonoBehaviour, IInteractable
 
     [Header("References")]
     [SerializeField] GameObject _keyVisuals;
+    [SerializeField] SphereCollider colliderkey;
 
     //[Header("Inputs")]
 
     [Header("Outputs")]
     [SerializeField] RSO_HaveKey _haveKey;
+    [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
+
     public int Priority => _priority;
     public Transform Transform => transform;
     public bool IsInteractable => _isInteractable;
@@ -30,6 +33,8 @@ public class S_KeyInteractible : MonoBehaviour, IInteractable
         _haveKey.Value = true;
         _isInteractable = false;
         _keyVisuals.SetActive(false);
+        colliderkey.enabled = false;
 
+        rseOnUIInterract.Call(false);
     }
 }
