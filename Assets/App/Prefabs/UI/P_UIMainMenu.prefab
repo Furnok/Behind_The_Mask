@@ -1013,7 +1013,11 @@ MonoBehaviour:
   fadeWindow: {fileID: 1580257061477272844}
   fadeCanvasGroup: {fileID: 4341109435905261744}
   rseOnMainMenu: {fileID: 11400000, guid: 4b91d8281b5ec7e4cb35b43b83736d93, type: 2}
+  rseOnOpenWindow: {fileID: 11400000, guid: e2a9b79d13ec2ab4eb58554a2220ad03, type: 2}
+  rseOnCloseWindow: {fileID: 11400000, guid: 99938650f1986af4a9799dcbc90d81c9, type: 2}
+  rseOnCloseAllWindows: {fileID: 11400000, guid: 9ef083c49d92238448ebc0e87e296616, type: 2}
   rseOnShowMouseCursor: {fileID: 11400000, guid: 05d1a18ef32d0254882c58dc4049dbb4, type: 2}
+  rsoCurrentWindows: {fileID: 11400000, guid: 1c6f9f6f22c008c47ab3343fb3dc201a, type: 2}
   ssoFadeTime: {fileID: 11400000, guid: 5aebcac51f5a6a043831b996e7962130, type: 2}
   ssoDisplayWindowTime: {fileID: 11400000, guid: 43e34502203d588499c46defb3523cd8, type: 2}
 --- !u!114 &8614518464254108915
