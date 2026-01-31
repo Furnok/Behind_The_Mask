@@ -157,6 +157,9 @@ MonoBehaviour:
   _priority: 0
   _isInteractable: 1
   _requiredMask: 0
+  _openOffset: {x: 2, y: 0, z: 0}
+  _openDuration: 0.5
+  _ease: 9
   _doorVisuals: {fileID: 4959285282971737744}
   _playerCurrentMaskEquipped: {fileID: 11400000, guid: 8294228d4caf6864e82b8769fc045881, type: 2}
 --- !u!65 &2803194466658797573
@@ -172,9 +175,9 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16311
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

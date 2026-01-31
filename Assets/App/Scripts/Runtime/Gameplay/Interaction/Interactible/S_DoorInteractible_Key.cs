@@ -1,12 +1,11 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class S_DoorInteractible : MonoBehaviour, IInteractable
+public class S_DoorInteractible_Key : MonoBehaviour, IInteractable
 {
     [Header("Settings")]
     [SerializeField] int _priority = 0;
     [SerializeField] bool _isInteractable = true;
-    [SerializeField] Mask _requiredMask;
     [SerializeField] Vector3 _openOffset = new Vector3(2f, 0f, 0f);
     [SerializeField] float _openDuration = 0.5f;
     [SerializeField] Ease _ease = Ease.OutCubic;
@@ -17,7 +16,7 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
     //[Header("Inputs")]
 
     [Header("Outputs")]
-    [SerializeField] RSO_PlayerCurrentMaskEquipped _playerCurrentMaskEquipped;
+    [SerializeField] RSO_HaveKey _haveKey;
 
     public int Priority => _priority;
     public Transform Transform => transform;
@@ -37,14 +36,13 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(_playerCurrentMaskEquipped.Value == _requiredMask)
+        if (_haveKey.Value == true)
         {
             // Logic to open the door and animation
-            Debug.Log("Door opened with mask: " + _requiredMask.ToString());
+            Debug.Log("Door opened with key ");
             //_doorVisuals.SetActive(false); // Simulate door opening by disabling visuals for now
 
             Open();
-
         }
     }
 
