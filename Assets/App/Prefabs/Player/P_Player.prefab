@@ -687,6 +687,7 @@ MonoBehaviour:
   _playerCurrentMaskUnlocked: {fileID: 11400000, guid: bd45e072b13f56442983809a8904903a, type: 2}
   _playerCurrentMaskEquipped: {fileID: 11400000, guid: 8294228d4caf6864e82b8769fc045881, type: 2}
   rseOnUpdateUIInventory: {fileID: 11400000, guid: 109cb71d3ec8d9e4ab6ffc2cb25b6a90, type: 2}
+  rseOnEquippedMaskUI: {fileID: 11400000, guid: 464eccb542f98ba428f1cc6623785f89, type: 2}
 --- !u!1 &8998856993452211249
 GameObject:
   m_ObjectHideFlags: 0

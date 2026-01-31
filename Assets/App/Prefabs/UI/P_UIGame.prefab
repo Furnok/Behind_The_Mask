@@ -5104,6 +5104,7 @@ GameObject:
   - component: {fileID: 7124408226399585054}
   - component: {fileID: 3161436643950571725}
   - component: {fileID: 7983612883176090053}
+  - component: {fileID: 7521884923056768961}
   m_Layer: 0
   m_Name: ContentGame
   m_TagString: Untagged
@@ -5172,10 +5173,55 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ad76e213f9d76144087a97223cf53ec5, type: 3}
   - {fileID: 21300000, guid: ad76e213f9d76144087a97223cf53ec5, type: 3}
   rseOnUpdateUIInventory: {fileID: 11400000, guid: 109cb71d3ec8d9e4ab6ffc2cb25b6a90, type: 2}
+  rseOnEquippedMaskUI: {fileID: 11400000, guid: 464eccb542f98ba428f1cc6623785f89, type: 2}
   rsoSetStaminaSliderValue: {fileID: 11400000, guid: dabcdcdfbd052fb449c97ce24ee20540, type: 2}
   rsoPlayerCurrentMaskUnlocked: {fileID: 11400000, guid: bd45e072b13f56442983809a8904903a, type: 2}
   ssoPlayerSettings: {fileID: 11400000, guid: 8cc4ba678eb7d4944a5c88680ffdf03f, type: 2}
   ssoSliderTime: {fileID: 11400000, guid: b34dc3de126efdb429860ae578773ea7, type: 2}
+--- !u!114 &7521884923056768961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514009375313026981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90002bd403b8639499bf2894feb52297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 943586532045223396}
+  - {fileID: 1187531368313237057}
+  - {fileID: 2144960244006371790}
+  - {fileID: 6977022601387682510}
+  texts:
+  - {fileID: 4787529074635949387}
+  - {fileID: 6125807550296142435}
+  - {fileID: 4507369359781223414}
+  - {fileID: 912694083228209697}
+  imagesKeyboardMouse:
+  - {fileID: 21300000, guid: 2985344a12ad07246b18f12cc64ed456, type: 3}
+  - {fileID: 21300000, guid: 2985344a12ad07246b18f12cc64ed456, type: 3}
+  - {fileID: 21300000, guid: 2985344a12ad07246b18f12cc64ed456, type: 3}
+  - {fileID: 21300000, guid: 2985344a12ad07246b18f12cc64ed456, type: 3}
+  textKeyboardMouse:
+  - F
+  - 1
+  - 2
+  - 3
+  imagesPlayStation:
+  - {fileID: 21300000, guid: c5b399045d31ad24cae3177185e16129, type: 3}
+  - {fileID: 21300000, guid: fa92fee8fd84b42418504ca3e94e13a5, type: 3}
+  - {fileID: 21300000, guid: 5be9112b673455548ba57ad413cff80c, type: 3}
+  - {fileID: 21300000, guid: 3d91209dc6a76434aa15433a04689683, type: 3}
+  imagesXbox:
+  - {fileID: 21300000, guid: c4ca2143141973a4f90ea263d1db64ac, type: 3}
+  - {fileID: 21300000, guid: d114730f00e13224a9204af8e0ae9197, type: 3}
+  - {fileID: 21300000, guid: dd351d34d062d0245931455186b26bc6, type: 3}
+  - {fileID: 21300000, guid: c1a0eae6fc88f0a48b388efc8f056989, type: 3}
+  rseOnUpdateDevice: {fileID: 11400000, guid: 6c3ac843f86857e49ac2ec49b79996d3, type: 2}
+  rsoDevice: {fileID: 11400000, guid: 93b21445ea0608e4699d35fdd66094e8, type: 2}
 --- !u!1 &8706876057457930503
 GameObject:
   m_ObjectHideFlags: 0

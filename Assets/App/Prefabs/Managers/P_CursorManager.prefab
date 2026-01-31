@@ -53,5 +53,6 @@ MonoBehaviour:
   rseOnResetFocus: {fileID: 11400000, guid: 0b5f77e2d22436549bb64fcd53c34a54, type: 2}
   rseOnMouseEnterUI: {fileID: 11400000, guid: 7ec3281d8a9b114428c5c0754b6969d7, type: 2}
   rseOnMouseLeaveUI: {fileID: 11400000, guid: 72368945d8904564ebbc31b489b84048, type: 2}
+  rseOnUpdateDevice: {fileID: 11400000, guid: 6c3ac843f86857e49ac2ec49b79996d3, type: 2}
   rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
   rsoDevice: {fileID: 11400000, guid: 93b21445ea0608e4699d35fdd66094e8, type: 2}

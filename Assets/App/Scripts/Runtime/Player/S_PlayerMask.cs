@@ -17,13 +17,14 @@ public class S_PlayerMask : MonoBehaviour
     [SerializeField] RSO_PlayerCurrentMaskUnlocked _playerCurrentMaskUnlocked;
     [SerializeField] RSO_PlayerCurrentMaskEquipped _playerCurrentMaskEquipped;
     [SerializeField] RSE_OnUpdateUIInventory rseOnUpdateUIInventory;
+    [SerializeField] RSE_OnEquippedMaskUI rseOnEquippedMaskUI;
 
     private void Awake()
     {
         _playerCurrentMaskUnlocked.Value = new S_SerializableDictionary<Mask, bool>();
-        _playerCurrentMaskUnlocked.Value.Add(Mask.BlueMask, false);
         _playerCurrentMaskUnlocked.Value.Add(Mask.GreenMask, false);
         _playerCurrentMaskUnlocked.Value.Add(Mask.RedMask, false);
+        _playerCurrentMaskUnlocked.Value.Add(Mask.BlueMask, false);
 
         //AddAllMAsk(); // For testing purposes, add all masks at start
 
@@ -86,20 +87,20 @@ public class S_PlayerMask : MonoBehaviour
 
     void OnMaskGreenInput()
     {
-        TryEquippedMask(Mask.GreenMask);
-    }
-
-    void OnMaskBlueInput()
-    {
-        TryEquippedMask(Mask.BlueMask);
+        TryEquippedMask(Mask.GreenMask, 0);
     }
 
     void OnMaskRedInput()
     {
-        TryEquippedMask(Mask.RedMask);
+        TryEquippedMask(Mask.RedMask, 1);
     }
 
-    void TryEquippedMask(Mask mask)
+    void OnMaskBlueInput()
+    {
+        TryEquippedMask(Mask.BlueMask, 2);
+    }
+
+    void TryEquippedMask(Mask mask, int index)
     {
         if (_playerCurrentMaskUnlocked.Value[mask] == false)
             return;
@@ -112,5 +113,7 @@ public class S_PlayerMask : MonoBehaviour
         {
             _playerCurrentMaskEquipped.Value = mask;
         }
+
+        rseOnEquippedMaskUI.Call(index);
     }
 }

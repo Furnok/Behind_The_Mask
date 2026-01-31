@@ -30,6 +30,9 @@ public class S_UIGame : MonoBehaviour
     [SerializeField] private RSE_OnUpdateUIInventory rseOnUpdateUIInventory;
 
     [TabGroup("Inputs")]
+    [SerializeField] private RSE_OnEquippedMaskUI rseOnEquippedMaskUI;
+
+    [TabGroup("Inputs")]
     [SerializeField] private RSO_CurrentStamina rsoSetStaminaSliderValue;
 
     [TabGroup("Outputs")]
@@ -52,12 +55,14 @@ public class S_UIGame : MonoBehaviour
     {
         rseOnUpdateUIInventory.action += UpdateInventory;
         rsoSetStaminaSliderValue.onValueChanged += SetStaminaSliderValue;
+        rseOnEquippedMaskUI.action += UpdateFocus;
     }
 
     private void OnDisable()
     {
         rseOnUpdateUIInventory.action -= UpdateInventory;
         rsoSetStaminaSliderValue.onValueChanged -= SetStaminaSliderValue;
+        rseOnEquippedMaskUI.action -= UpdateFocus;
     }
 
     private void SetStaminaSliderValue(float value)
@@ -82,5 +87,10 @@ public class S_UIGame : MonoBehaviour
                 imageInventory[i].sprite = spriteNoMasks[i];
             }
         }
+    }
+
+    private void UpdateFocus(int index)
+    {
+
     }
 }

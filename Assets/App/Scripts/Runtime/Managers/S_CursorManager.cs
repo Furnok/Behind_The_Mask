@@ -35,6 +35,9 @@ public class S_CursorManager : MonoBehaviour
     [SerializeField] private RSE_OnMouseLeaveUI rseOnMouseLeaveUI;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnUpdateDevice rseOnUpdateDevice;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSO_Navigation rsoNavigation;
 
     [TabGroup("Outputs")]
@@ -113,6 +116,8 @@ public class S_CursorManager : MonoBehaviour
                 ShowMouseCursor();
             }
         }
+
+        rseOnUpdateDevice.Call();
     }
 
     private void ShowMouseCursor()
