@@ -9,6 +9,9 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
     [Header("Inputs")]
     [SerializeField] RSE_OnInteractInput _onInteractInput;
 
+    [Header("Outputs")]
+    [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
+
     //[Header("Outputs")]
 
     private void OnEnable()
@@ -32,11 +35,15 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
     private void OnTriggerEnter(Collider other)
     {
         TryAddInteractableFromCollider(other);
+
+        rseOnUIInterract.Call(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
         TryRemoveInteractableFromCollider(other);
+
+        rseOnUIInterract.Call(false);
     }
 
     private void Update()

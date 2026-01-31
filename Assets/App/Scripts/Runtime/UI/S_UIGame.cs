@@ -2,6 +2,7 @@ using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,13 @@ public class S_UIGame : MonoBehaviour
     [TabGroup("References")]
     [Title("Book")]
     [SerializeField] private Image imageBook;
+
+    [TabGroup("References")]
+    [Title("Interact")]
+    [SerializeField] private GameObject objInteract;
+
+    [TabGroup("References")]
+    [SerializeField] private CanvasGroup canvasGroupInteract;
 
     [TabGroup("References")]
     [Title("Inventory")]
@@ -43,6 +51,9 @@ public class S_UIGame : MonoBehaviour
     [SerializeField] private RSE_OnEquippedMaskUI rseOnEquippedMaskUI;
 
     [TabGroup("Inputs")]
+    [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
+
+    [TabGroup("Inputs")]
     [SerializeField] private RSO_CurrentStamina rsoSetStaminaSliderValue;
 
     [TabGroup("Outputs")]
@@ -54,6 +65,10 @@ public class S_UIGame : MonoBehaviour
     [TabGroup("Outputs")]
     [SerializeField] private SSO_SliderTime ssoSliderTime;
 
+    [TabGroup("Outputs")]
+    [SerializeField] private SSO_DisplayWindowTime ssoDisplayWindowTime;
+
+    private Tween interactTween = null;
     private Tween staminaTween = null;
 
     private int maskIndex = -1;
@@ -68,6 +83,7 @@ public class S_UIGame : MonoBehaviour
         rseOnUpdateUIInventory.action += UpdateInventory;
         rsoSetStaminaSliderValue.onValueChanged += SetStaminaSliderValue;
         rseOnEquippedMaskUI.action += UpdateFocus;
+        rseOnUIInterract.action += DisplayInteract;
     }
 
     private void OnDisable()
@@ -75,6 +91,7 @@ public class S_UIGame : MonoBehaviour
         rseOnUpdateUIInventory.action -= UpdateInventory;
         rsoSetStaminaSliderValue.onValueChanged -= SetStaminaSliderValue;
         rseOnEquippedMaskUI.action -= UpdateFocus;
+        rseOnUIInterract.action -= DisplayInteract;
     }
 
     private void SetStaminaSliderValue(float value)
@@ -116,6 +133,26 @@ public class S_UIGame : MonoBehaviour
         else
         {
             maskIndex = -1;
+        }
+    }
+
+    private void DisplayInteract(bool value)
+    {
+        interactTween?.Kill();
+
+        if (value)
+        {
+            interactTween = canvasGroupInteract.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
+            {
+                objInteract.SetActive(true);
+            });
+        }
+        else
+        {
+            interactTween =  canvasGroupInteract.DOFade(0f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnComplete(() =>
+            {
+                objInteract.SetActive(false);
+            });
         }
     }
 }
