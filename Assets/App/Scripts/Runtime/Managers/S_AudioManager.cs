@@ -41,6 +41,8 @@ public class S_AudioManager : MonoBehaviour
 
     private void PlayAudio(S_ClassAudio classAudio)
     {
+        if (classAudio.clip == null) return;
+
         GameObject audioObj = Instantiate(audioSourcePrefab, gameObject.transform);
         audioObj.transform.SetParent(gameObject.transform);
         audioObj.name = $"Audio_{classAudio.clip.name}";

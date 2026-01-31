@@ -7,6 +7,13 @@ public class S_GameManager : MonoBehaviour
     [Title("Mode")]
     [SerializeField] private bool isMainMenu;
 
+    [TabGroup("Settings")]
+    [Title("Audio")]
+    [SerializeField] private S_ClassAudio audioMainMenu;
+
+    [TabGroup("Settings")]
+    [SerializeField] private S_ClassAudio audioGame;
+
     //[Header("References")]
 
     //[Header("Inputs")]
@@ -14,8 +21,19 @@ public class S_GameManager : MonoBehaviour
     [TabGroup("Outputs")]
     [SerializeField] private RSE_OnMainMenu rseOnMainMenu;
 
+    [TabGroup("Outputs")]
+    [SerializeField] private RSE_PlayAudio rsePlayAudio;
+
     private void Start()
     {
-        if (isMainMenu) rseOnMainMenu.Call();
+        if (isMainMenu)
+        {
+            rseOnMainMenu.Call();
+            rsePlayAudio.Call(audioMainMenu);
+        }
+        else
+        {
+            rsePlayAudio.Call(audioGame);
+        }
     }
 }
