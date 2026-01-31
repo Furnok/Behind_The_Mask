@@ -15,7 +15,7 @@ MonoBehaviour:
   _value:
     WalkSpeed: 5
     SprintSpeed: 8
-    StaminaMax: 20
+    StaminaMax: 25
     StaminaDrainRate: 5
     StaminaRecoveryRate: 5
     StaminaRecoveryDelay: 1
