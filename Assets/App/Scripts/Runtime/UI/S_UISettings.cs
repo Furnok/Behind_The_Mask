@@ -1,5 +1,4 @@
-﻿using DG.Tweening;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -52,6 +51,8 @@ public class S_UISettings : MonoBehaviour
         if (Gamepad.current == null) rseOnShowMouseCursor.Call();
 
         isClosing = false;
+
+        rsePlayAudio.Call(audioWindow);
     }
 
     private void OnDisable()

@@ -15,4 +15,32 @@ public class S_ClassAudio
     public bool fade = false;
 
     public bool loop = false;
+
+    [Title("Position")]
+    public Vector3 position = Vector3.zero;
+
+    public Quaternion rotation = Quaternion.identity;
+
+    [Title("3D")]
+    public bool is3D = false;
+
+    [ShowIf("Is3D")]
+    [OnValueChanged(nameof(ClampDistanceMin))]
+    public float minDistance = 0;
+
+    [ShowIf("Is3D")]
+    [OnValueChanged(nameof(ClampDistanceMax))]
+    public float maxDistance = 500f;
+
+    private bool Is3D => is3D == true;
+
+    private void ClampDistanceMin()
+    {
+        minDistance = Math.Max(0f, minDistance);
+    }
+
+    private void ClampDistanceMax()
+    {
+        maxDistance = Math.Max(0f, maxDistance);
+    }
 }

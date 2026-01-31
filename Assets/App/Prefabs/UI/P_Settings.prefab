@@ -3521,6 +3521,7 @@ MonoBehaviour:
   defaultFocusSelectable: {fileID: 5640465621008990194}
   rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
   rseOnResetCursor: {fileID: 11400000, guid: 3b13ba4a06559cb478a86c3cf4ac8d54, type: 2}
+  ssoDisplayWindowTime: {fileID: 11400000, guid: 43e34502203d588499c46defb3523cd8, type: 2}
 --- !u!114 &7725948538825594472
 MonoBehaviour:
   m_ObjectHideFlags: 0

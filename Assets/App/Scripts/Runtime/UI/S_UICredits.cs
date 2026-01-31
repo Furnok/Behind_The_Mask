@@ -39,6 +39,8 @@ public class S_UICredits : MonoBehaviour
         if (Gamepad.current == null) rseOnShowMouseCursor.Call();
 
         isClosing = false;
+
+        rsePlayAudio.Call(audioWindow);
     }
 
     private void OnDisable()

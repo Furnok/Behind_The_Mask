@@ -2,8 +2,12 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class S_UIMainMenu : MonoBehaviour
+public class S_UIMenu : MonoBehaviour
 {
+    [TabGroup("Settings")]
+    [Title("Audio")]
+    [SerializeField] private S_ClassAudio audioWindow;
+
     [TabGroup("References")]
     [Title("Levels")]
     [SerializeField] private S_SceneReference levelName;
@@ -11,10 +15,6 @@ public class S_UIMainMenu : MonoBehaviour
     [TabGroup("References")]
     [Title("Settings Window")]
     [SerializeField] private GameObject settingsWindow;
-
-    [TabGroup("References")]
-    [Title("Credits Window")]
-    [SerializeField] private GameObject creditsWindow;
 
     [TabGroup("Outputs")]
     [SerializeField] private RSE_OnFadeOut rseOnFadeOut;
@@ -41,6 +41,18 @@ public class S_UIMainMenu : MonoBehaviour
     [SerializeField] private RSE_StopAllAudio rseStopAllAudio;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnEscapeInput rseOnEscapeInput;
+
+    [TabGroup("Outputs")]
+    [SerializeField] private RSE_PlayAudio rsePlayAudio;
+
+    [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnResetFocus rseOnResetFocus;
+
+    [TabGroup("Outputs")]
+    [SerializeField] private RSO_CurrentWindows rsoCurrentWindows;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSO_Navigation rsoNavigation;
 
     [TabGroup("Outputs")]
@@ -50,12 +62,47 @@ public class S_UIMainMenu : MonoBehaviour
 
     private void OnEnable()
     {
+        rseOnEscapeInput.action += CloseEscape;
+
         if (Gamepad.current == null) rseOnShowMouseCursor.Call();
 
         isTransit = false;
+
+        rsePlayAudio.Call(audioWindow);
     }
 
-    public void StartGame()
+    private void OnDisable()
+    {
+        rseOnEscapeInput.action -= CloseEscape;
+    }
+
+    private void CloseEscape()
+    {
+        if (rsoCurrentWindows.Value.Count > 0 && rsoCurrentWindows.Value[^1] == gameObject) ResumeGame();
+    }
+
+    public void ResumeGame()
+    {
+        if (!isTransit)
+        {
+            rseOnHideMouseCursor.Call();
+
+            rseOnCloseAllWindows.Call();
+            rsoNavigation.Value.selectableDefault = null;
+            rseOnResetFocus.Call();
+        }
+    }
+
+    public void Settings()
+    {
+        if (!isTransit)
+        {
+            rsoNavigation.Value.selectableFocus = null;
+            rseOnOpenWindow.Call(settingsWindow);
+        }
+    }
+
+    public void MainMenu()
     {
         if (!isTransit)
         {
@@ -67,33 +114,12 @@ public class S_UIMainMenu : MonoBehaviour
 
             StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
             {
-                rseOnCloseAllWindows.Call();
                 rsoNavigation.Value.selectableFocus = null;
 
                 rseOnHideMouseCursor.Call();
 
                 StartCoroutine(S_Utils.DelayRealTime(0.8f, () => rseOnLoadScene.Call(levelName.Name)));
             }));
-        }
-    }
-
-    public void Settings()
-    {
-        if (!isTransit)
-        {
-            rseOnCloseAllWindows.Call();
-            rsoNavigation.Value.selectableFocus = null;
-            rseOnOpenWindow.Call(settingsWindow);
-        }
-    }
-
-    public void Credits()
-    {
-        if (!isTransit)
-        {
-            rseOnCloseAllWindows.Call();
-            rsoNavigation.Value.selectableFocus = null;
-            rseOnOpenWindow.Call(creditsWindow);
         }
     }
 

@@ -45,7 +45,7 @@ public class S_AudioManager : MonoBehaviour
     {
         if (classAudio.clip == null) return;
 
-        GameObject audioObj = Instantiate(audioSourcePrefab, gameObject.transform);
+        GameObject audioObj = Instantiate(audioSourcePrefab, classAudio.position, classAudio.rotation, gameObject.transform);
         audioObj.transform.SetParent(gameObject.transform);
         audioObj.name = $"Audio_{classAudio.clip.name}";
 
@@ -53,6 +53,9 @@ public class S_AudioManager : MonoBehaviour
         audioSource.clip = classAudio.clip;
         audioSource.outputAudioMixerGroup = classAudio.mixerGroup;
         audioSource.loop = classAudio.loop;
+        audioSource.spatialBlend = classAudio.is3D ? 1f : 0f;
+        audioSource.minDistance = classAudio.minDistance;
+        audioSource.maxDistance = classAudio.maxDistance;
 
         S_AudioSource script = audioObj.GetComponent<S_AudioSource>();
         script.Setup(this);

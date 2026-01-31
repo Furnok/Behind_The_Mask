@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMainMenu: 0
+  isMenu: 0
   audioMainMenu:
     clip: {fileID: 8300000, guid: 14abfa5c53cb918478495fa17f26a132, type: 3}
     mixerGroup: {fileID: 2146873307849394114, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
@@ -56,4 +57,5 @@ MonoBehaviour:
     fade: 1
     loop: 1
   rseOnMainMenu: {fileID: 11400000, guid: 4b91d8281b5ec7e4cb35b43b83736d93, type: 2}
+  rseOnMenu: {fileID: 11400000, guid: e56b4202ad366f0439455c67d75d6e95, type: 2}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}

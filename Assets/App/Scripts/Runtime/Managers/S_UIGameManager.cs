@@ -1,16 +1,15 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class S_UIMainMenuManager : MonoBehaviour
+public class S_UIGameManager : MonoBehaviour
 {
     [TabGroup("References")]
     [Title("Main Menu Window")]
-    [SerializeField] private GameObject mainMenuWindow;
+    [SerializeField] private GameObject menuWindow;
 
     [TabGroup("References")]
-    [SerializeField] private CanvasGroup mainMenuCanvasGroup;
+    [SerializeField] private CanvasGroup menuCanvasGroup;
 
     [TabGroup("References")]
     [Title("Fade Window")]
@@ -19,8 +18,8 @@ public class S_UIMainMenuManager : MonoBehaviour
     [TabGroup("References")]
     [SerializeField] private CanvasGroup fadeCanvasGroup;
 
-    [TabGroup("Inputs")]
-    [SerializeField] private RSE_OnMainMenu rseOnMainMenu;
+    [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnMenu rseOnMenu;
 
     [TabGroup("Inputs")]
     [SerializeField] private RSE_OnOpenWindow rseOnOpenWindow;
@@ -38,6 +37,9 @@ public class S_UIMainMenuManager : MonoBehaviour
     [SerializeField] private RSE_OnFadeOut rseOnFadeOut;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnEscapeInput rseOnEscapeInput;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSO_CurrentWindows rsoCurrentWindows;
 
     [TabGroup("Outputs")]
@@ -46,32 +48,40 @@ public class S_UIMainMenuManager : MonoBehaviour
     [TabGroup("Outputs")]
     [SerializeField] private SSO_DisplayWindowTime ssoDisplayWindowTime;
 
-    private Tween mainMenuTween = null;
     private Tween fadeTween = null;
 
     private void OnEnable()
     {
-        rseOnMainMenu.action += Setup;
+        rseOnMenu.action += Setup;
         rseOnOpenWindow.action += AlreadyOpen;
         rseOnCloseWindow.action += CloseWindow;
         rseOnCloseAllWindows.action += CloseAllWindows;
         rseOnFadeIn.action += FadeIn;
         rseOnFadeOut.action += FadeOut;
+        rseOnEscapeInput.action += PauseGame;
     }
 
     private void OnDisable()
     {
-        rseOnMainMenu.action -= Setup;
+        rseOnMenu.action -= Setup;
         rseOnOpenWindow.action -= AlreadyOpen;
         rseOnCloseWindow.action -= CloseWindow;
         rseOnCloseAllWindows.action -= CloseAllWindows;
         rseOnFadeIn.action -= FadeIn;
         rseOnFadeOut.action -= FadeOut;
+        rseOnEscapeInput.action -= PauseGame;
 
-        mainMenuTween?.Kill();
         fadeTween?.Kill();
 
         rsoCurrentWindows.Value = new();
+    }
+
+    private void PauseGame()
+    {
+        if (rsoCurrentWindows.Value.Count < 1 && !menuWindow.activeInHierarchy)
+        {
+            OpenWindow(menuWindow);
+        }
     }
 
     private void Setup()
@@ -84,12 +94,7 @@ public class S_UIMainMenuManager : MonoBehaviour
 
             StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
             {
-                mainMenuTween?.Kill();
-
-                mainMenuTween = mainMenuCanvasGroup.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
-                {
-                    mainMenuWindow.SetActive(true);
-                });
+                OpenWindow(menuWindow);
             }));
         }));
 
@@ -109,8 +114,8 @@ public class S_UIMainMenuManager : MonoBehaviour
         CanvasGroup cg = window.GetComponent<CanvasGroup>();
         cg.DOKill();
 
-        cg.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(()=>
-        {             
+        cg.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
+        {
             window.SetActive(true);
         });
 

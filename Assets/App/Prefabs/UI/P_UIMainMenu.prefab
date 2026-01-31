@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 500, y: 320}
+  m_SizeDelta: {x: 500, y: 360}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468713647511991334
 MonoBehaviour:
@@ -59,7 +59,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 10
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -144,6 +144,7 @@ MonoBehaviour:
   defaultFocusSelectable: {fileID: 8444982952319452502}
   rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
   rseOnResetCursor: {fileID: 11400000, guid: 3b13ba4a06559cb478a86c3cf4ac8d54, type: 2}
+  ssoDisplayWindowTime: {fileID: 11400000, guid: 43e34502203d588499c46defb3523cd8, type: 2}
 --- !u!114 &4972476497770189737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,7 +1537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d399c9092be9cc4e8f95a9ca9148979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultWindow: {fileID: 8387520494592679084}
   mainMenuWindow: {fileID: 8387520494592679084}
   mainMenuCanvasGroup: {fileID: 8696915156094280135}
   fadeWindow: {fileID: 1580257061477272844}
@@ -1547,7 +1547,6 @@ MonoBehaviour:
   rseOnCloseAllWindows: {fileID: 11400000, guid: 9ef083c49d92238448ebc0e87e296616, type: 2}
   rseOnFadeIn: {fileID: 11400000, guid: 88a497e7992ebba408246ff9309df6e5, type: 2}
   rseOnFadeOut: {fileID: 11400000, guid: bc8e79bbd9547214c9132a9ff5afe288, type: 2}
-  rseOnShowMouseCursor: {fileID: 11400000, guid: 05d1a18ef32d0254882c58dc4049dbb4, type: 2}
   rsoCurrentWindows: {fileID: 11400000, guid: 1c6f9f6f22c008c47ab3343fb3dc201a, type: 2}
   ssoFadeTime: {fileID: 11400000, guid: 5aebcac51f5a6a043831b996e7962130, type: 2}
   ssoDisplayWindowTime: {fileID: 11400000, guid: 43e34502203d588499c46defb3523cd8, type: 2}
@@ -2736,6 +2735,7 @@ MonoBehaviour:
   defaultFocusSelectable: {fileID: 5212981936295520978}
   rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
   rseOnResetCursor: {fileID: 11400000, guid: 3b13ba4a06559cb478a86c3cf4ac8d54, type: 2}
+  ssoDisplayWindowTime: {fileID: 11400000, guid: 43e34502203d588499c46defb3523cd8, type: 2}
 --- !u!114 &27339280987767691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2758,6 +2758,7 @@ MonoBehaviour:
   rseOnOpenWindow: {fileID: 11400000, guid: e2a9b79d13ec2ab4eb58554a2220ad03, type: 2}
   rseOnCloseAllWindows: {fileID: 11400000, guid: 9ef083c49d92238448ebc0e87e296616, type: 2}
   rseOnQuitGame: {fileID: 11400000, guid: bec6c0ff7da6d5148bc028b0554817af, type: 2}
+  rseOnShowMouseCursor: {fileID: 11400000, guid: 05d1a18ef32d0254882c58dc4049dbb4, type: 2}
   rseOnHideMouseCursor: {fileID: 11400000, guid: dfd0f540889f6374fa1c8b6d1fd64f5a, type: 2}
   rseOnLoadScene: {fileID: 11400000, guid: 4083bca5e19e93f44b63273be32064b6, type: 2}
   rseStopAllAudio: {fileID: 11400000, guid: 9f87ef9a82d192e4b93ecf8bb4b75785, type: 2}

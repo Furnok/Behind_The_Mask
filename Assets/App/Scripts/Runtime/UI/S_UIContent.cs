@@ -15,9 +15,12 @@ public class S_UIContent : MonoBehaviour
     [TabGroup("Outputs")]
     [SerializeField] private RSE_OnResetCursor rseOnResetCursor;
 
+    [TabGroup("Outputs")]
+    [SerializeField] private SSO_DisplayWindowTime ssoDisplayWindowTime;
+
     private void OnEnable()
     {
-        StartCoroutine(S_Utils.DelayFrame(() =>
+        StartCoroutine(S_Utils.DelayRealTime(ssoDisplayWindowTime.Value.time, () =>
         {
             rsoNavigation.Value.selectableDefault = defaultFocusSelectable;
 

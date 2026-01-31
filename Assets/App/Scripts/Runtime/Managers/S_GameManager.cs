@@ -8,6 +8,9 @@ public class S_GameManager : MonoBehaviour
     [SerializeField] private bool isMainMenu;
 
     [TabGroup("Settings")]
+    [SerializeField] private bool isMenu;
+
+    [TabGroup("Settings")]
     [Title("Audio")]
     [SerializeField] private S_ClassAudio audioMainMenu;
 
@@ -22,6 +25,9 @@ public class S_GameManager : MonoBehaviour
     [SerializeField] private RSE_OnMainMenu rseOnMainMenu;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnMenu rseOnMenu;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
     private void Start()
@@ -34,6 +40,15 @@ public class S_GameManager : MonoBehaviour
         else
         {
             rsePlayAudio.Call(audioGame);
+
+            if (isMenu)
+            {
+                rseOnMenu.Call();
+            }
+            else
+            {
+
+            }
         }
     }
 }
