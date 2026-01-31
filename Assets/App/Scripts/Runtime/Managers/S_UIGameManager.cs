@@ -5,6 +5,13 @@ using UnityEngine;
 public class S_UIGameManager : MonoBehaviour
 {
     [TabGroup("References")]
+    [Title("Game Window")]
+    [SerializeField] private GameObject gameWindow;
+
+    [TabGroup("References")]
+    [SerializeField] private CanvasGroup gameCanvasGroup;
+
+    [TabGroup("References")]
     [Title("Main Menu Window")]
     [SerializeField] private GameObject menuWindow;
 
@@ -54,6 +61,7 @@ public class S_UIGameManager : MonoBehaviour
     [TabGroup("Outputs")]
     [SerializeField] private SSO_DisplayWindowTime ssoDisplayWindowTime;
 
+    private Tween gameTween = null;
     private Tween fadeTween = null;
 
     private void OnEnable()
@@ -123,7 +131,12 @@ public class S_UIGameManager : MonoBehaviour
 
             StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
             {
+                gameTween?.Kill();
 
+                gameTween = gameCanvasGroup.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
+                {
+                    gameWindow.SetActive(true);
+                });
             }));
         }));
     }

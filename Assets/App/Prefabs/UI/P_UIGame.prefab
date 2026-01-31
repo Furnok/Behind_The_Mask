@@ -1862,6 +1862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4adb8980ce7591543ae28055a255fa32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameWindow: {fileID: 8856619945196121285}
+  gameCanvasGroup: {fileID: 6661620091844976802}
   menuWindow: {fileID: 8020607945730795145}
   menuCanvasGroup: {fileID: 2777348813744507825}
   fadeWindow: {fileID: 4573565003498163268}
@@ -2628,7 +2630,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5897786313182949202}
   - component: {fileID: 6661620091844976802}
-  - component: {fileID: 6587807172613584696}
   m_Layer: 0
   m_Name: ContentGame
   m_TagString: Untagged
@@ -2667,22 +2668,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &6587807172613584696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8856619945196121285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc508354ec542e4ba49606c8e205cf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultFocusSelectable: {fileID: 0}
-  rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
-  rseOnResetCursor: {fileID: 11400000, guid: 3b13ba4a06559cb478a86c3cf4ac8d54, type: 2}
-  ssoDisplayWindowTime: {fileID: 11400000, guid: 43e34502203d588499c46defb3523cd8, type: 2}
 --- !u!1 &9070071876077928678
 GameObject:
   m_ObjectHideFlags: 0
