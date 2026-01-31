@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value:
     WalkSpeed: 5
-    SprintSpeed: 7
+    SprintSpeed: 8
     StaminaMax: 100
     StaminaDrainRate: 5
     StaminaRecoveryRate: 5

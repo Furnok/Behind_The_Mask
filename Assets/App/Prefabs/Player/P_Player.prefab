@@ -541,8 +541,10 @@ MonoBehaviour:
   _rigidbody: {fileID: 6753380220604057263}
   _camera: {fileID: 2183715599515162159}
   _onMoveInput: {fileID: 11400000, guid: 0813bf0c20d87bb4d81ab9b77ed9f7a1, type: 2}
-  _PlayerSettings: {fileID: 11400000, guid: 8cc4ba678eb7d4944a5c88680ffdf03f, type: 2}
-  _CameraRotation: {fileID: 11400000, guid: 378f9bd4e735b6a4f8e4bfe79e7408fd, type: 2}
+  _playerSettings: {fileID: 11400000, guid: 8cc4ba678eb7d4944a5c88680ffdf03f, type: 2}
+  _cameraRotation: {fileID: 11400000, guid: 378f9bd4e735b6a4f8e4bfe79e7408fd, type: 2}
+  _playerIsMoving: {fileID: 11400000, guid: c3bb5e0a953cbf6479a1a4edcacff777, type: 2}
+  _playerIsSprinting: {fileID: 11400000, guid: 6ff94bd999fe04444a5d23098ef6d2ff, type: 2}
 --- !u!114 &2015074597568317679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,8 +572,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c12f7b231c5cc4eb4ec571185564d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onSprintInput: {fileID: 11400000, guid: f35e62adb7d351f41bb1b6365a0e9c2f, type: 2}
+  _onSprintCancelInput: {fileID: 11400000, guid: cd946a8c8170be449a09e392d720f3cc, type: 2}
   _currentStamina: {fileID: 11400000, guid: dabcdcdfbd052fb449c97ce24ee20540, type: 2}
   _playerSettings: {fileID: 11400000, guid: 8cc4ba678eb7d4944a5c88680ffdf03f, type: 2}
+  _playerIsSprinting: {fileID: 11400000, guid: 6ff94bd999fe04444a5d23098ef6d2ff, type: 2}
+  _playerIsMoving: {fileID: 11400000, guid: c3bb5e0a953cbf6479a1a4edcacff777, type: 2}
 --- !u!54 &6753380220604057263
 Rigidbody:
   m_ObjectHideFlags: 0

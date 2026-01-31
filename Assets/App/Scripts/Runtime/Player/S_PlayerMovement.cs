@@ -14,17 +14,23 @@ public class S_PlayerMovement : MonoBehaviour
     [SerializeField] RSE_OnMoveInput _onMoveInput;
 
     [Header("Outputs")]
-    [SerializeField] SSO_PlayerSettings _PlayerSettings;
-    [SerializeField] RSO_CameraRotation _CameraRotation;
+    [SerializeField] SSO_PlayerSettings _playerSettings;
+    [SerializeField] RSO_CameraRotation _cameraRotation;
+    [SerializeField] RSO_PlayerIsMoving _playerIsMoving;
+    [SerializeField] RSO_PlayerIsSprinting _playerIsSprinting;
 
 
     Vector2 _moveInput = Vector2.zero;
 
-    bool _isMoving = false;
-    bool _isSrprinting = false;
-    bool _canSprint = false;
+    bool _isMoving => _playerIsMoving.Value;
+    bool _isSprinting => _playerIsSprinting.Value;
 
     Vector3 _desiredDirection = Vector3.zero;
+
+    private void Awake()
+    {
+        _playerIsMoving.Value = false;
+    }
 
     private void OnEnable()
     {
@@ -46,8 +52,8 @@ public class S_PlayerMovement : MonoBehaviour
         BuildDirection();
         Vector3 moveDirection = _desiredDirection.normalized;
         moveDirection.y = 0f;
-        _isMoving = moveDirection.magnitude > 0;
-        float currentSpeed = _isSrprinting && _canSprint ? _PlayerSettings.Value.SprintSpeed : _PlayerSettings.Value.WalkSpeed;
+        _playerIsMoving.Value = moveDirection.magnitude > 0;
+        float currentSpeed = _isSprinting ? _playerSettings.Value.SprintSpeed : _playerSettings.Value.WalkSpeed;
         Vector3 velocity = moveDirection * currentSpeed;
         _rigidbody.linearVelocity = new Vector3(velocity.x, _rigidbody.linearVelocity.y, velocity.z);
     }
