@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2609403997435325358}
   - component: {fileID: 6125807550296142435}
   m_Layer: 0
-  m_Name: TextItemInput
+  m_Name: TextItemInputMask_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 4118339366065168833}
   - component: {fileID: 6971517933107815731}
   m_Layer: 0
-  m_Name: PanelItemImage
+  m_Name: PanelItemImageMask_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 6194018712508654508}
   - component: {fileID: 6977022601387682510}
   m_Layer: 0
-  m_Name: PanelItemInput
+  m_Name: PanelItemInputMask_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 7396971478781880795}
   - component: {fileID: 3629428371721747184}
   m_Layer: 0
-  m_Name: PanelItemImage
+  m_Name: PanelItemImageMask_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 2911561696302035336}
   - component: {fileID: 4507369359781223414}
   m_Layer: 0
-  m_Name: TextItemInput
+  m_Name: TextItemInputMask_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1870,7 +1870,7 @@ GameObject:
   - component: {fileID: 944581182868327590}
   - component: {fileID: 1898779217188257971}
   m_Layer: 0
-  m_Name: PanelItem
+  m_Name: PanelItemMask_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2291,7 +2291,7 @@ GameObject:
   - component: {fileID: 6924302727920451915}
   - component: {fileID: 2144960244006371790}
   m_Layer: 0
-  m_Name: PanelItemInput
+  m_Name: PanelItemInputMask_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2367,7 +2367,7 @@ GameObject:
   - component: {fileID: 7722926030494366927}
   - component: {fileID: 7902804706771986863}
   m_Layer: 0
-  m_Name: PanelItem
+  m_Name: PanelItemMask_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2478,7 +2478,7 @@ GameObject:
   - component: {fileID: 682186246449435893}
   - component: {fileID: 7302065145701639793}
   m_Layer: 0
-  m_Name: PanelBook_03
+  m_Name: PanelMask_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3042,7 +3042,7 @@ GameObject:
   - component: {fileID: 5933964817358552269}
   - component: {fileID: 4787529074635949387}
   m_Layer: 0
-  m_Name: TextItemInput
+  m_Name: TextItemInputBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3337,7 +3337,7 @@ GameObject:
   - component: {fileID: 2854505799145803484}
   - component: {fileID: 8701722318838237292}
   m_Layer: 0
-  m_Name: PanelBook_02
+  m_Name: PanelMask_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3402,7 +3402,7 @@ GameObject:
   - component: {fileID: 877332277991987177}
   - component: {fileID: 8787128181706271575}
   m_Layer: 0
-  m_Name: PanelItemImage
+  m_Name: PanelItemImageMask_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3897,7 +3897,7 @@ GameObject:
   - component: {fileID: 8930748218036678087}
   - component: {fileID: 6808912118965671952}
   m_Layer: 0
-  m_Name: PanelItem
+  m_Name: PanelItemMask_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4366,7 +4366,7 @@ GameObject:
   - component: {fileID: 4668369177418422973}
   - component: {fileID: 943586532045223396}
   m_Layer: 0
-  m_Name: PanelItemInput
+  m_Name: PanelItemInputBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4683,7 +4683,7 @@ GameObject:
   - component: {fileID: 8698883187527578096}
   - component: {fileID: 912694083228209697}
   m_Layer: 0
-  m_Name: TextItemInput
+  m_Name: TextItemInputMask_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5040,7 +5040,7 @@ GameObject:
   - component: {fileID: 4482499796697390833}
   - component: {fileID: 706567593319240066}
   m_Layer: 0
-  m_Name: PanelBook_01
+  m_Name: PanelMask_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5158,7 +5158,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderStamina: {fileID: 845074167530369111}
+  imageBook: {fileID: 5329524359584567121}
+  imageInventory:
+  - {fileID: 3629428371721747184}
+  - {fileID: 6971517933107815731}
+  - {fileID: 8787128181706271575}
+  rseOnUpdateUIInventory: {fileID: 11400000, guid: 109cb71d3ec8d9e4ab6ffc2cb25b6a90, type: 2}
   rsoSetStaminaSliderValue: {fileID: 11400000, guid: dabcdcdfbd052fb449c97ce24ee20540, type: 2}
+  rsoPlayerCurrentMaskUnlocked: {fileID: 11400000, guid: bd45e072b13f56442983809a8904903a, type: 2}
   ssoPlayerSettings: {fileID: 11400000, guid: 8cc4ba678eb7d4944a5c88680ffdf03f, type: 2}
   ssoSliderTime: {fileID: 11400000, guid: b34dc3de126efdb429860ae578773ea7, type: 2}
 --- !u!1 &8706876057457930503
@@ -5274,7 +5281,7 @@ GameObject:
   - component: {fileID: 9085239514837934358}
   - component: {fileID: 1187531368313237057}
   m_Layer: 0
-  m_Name: PanelItemInput
+  m_Name: PanelItemInputMask_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

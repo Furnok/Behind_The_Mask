@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,22 @@ public class S_UIGame : MonoBehaviour
     [Title("Sliders")]
     [SerializeField] private Slider sliderStamina;
 
+    [TabGroup("References")]
+    [Title("Book")]
+    [SerializeField] private Image imageBook;
+
+    [TabGroup("References")]
+    [Title("Inventory")]
+    [SerializeField] private List<Image> imageInventory;
+
+    [TabGroup("Inputs")]
+    [SerializeField] private RSE_OnUpdateUIInventory rseOnUpdateUIInventory;
+
     [TabGroup("Inputs")]
     [SerializeField] private RSO_CurrentStamina rsoSetStaminaSliderValue;
+
+    [TabGroup("Outputs")]
+    [SerializeField] private RSO_PlayerCurrentMaskUnlocked rsoPlayerCurrentMaskUnlocked;
 
     [TabGroup("Outputs")]
     [SerializeField] private SSO_PlayerSettings ssoPlayerSettings;
@@ -27,11 +42,13 @@ public class S_UIGame : MonoBehaviour
 
     private void OnEnable()
     {
+        rseOnUpdateUIInventory.action += UpdateInventory;
         rsoSetStaminaSliderValue.onValueChanged += SetStaminaSliderValue;
     }
 
     private void OnDisable()
     {
+        rseOnUpdateUIInventory.action -= UpdateInventory;
         rsoSetStaminaSliderValue.onValueChanged -= SetStaminaSliderValue;
     }
 
@@ -40,5 +57,10 @@ public class S_UIGame : MonoBehaviour
         staminaTween?.Kill();
 
         staminaTween = sliderStamina.DOValue(value, ssoSliderTime.Value.time).SetEase(Ease.OutCubic);
+    }
+
+    private void UpdateInventory()
+    {
+        //rsoPlayerCurrentMaskUnlocked
     }
 }

@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class S_PlayerMask : MonoBehaviour
@@ -15,6 +16,7 @@ public class S_PlayerMask : MonoBehaviour
     [Header("Outputs")]
     [SerializeField] RSO_PlayerCurrentMaskUnlocked _playerCurrentMaskUnlocked;
     [SerializeField] RSO_PlayerCurrentMaskEquipped _playerCurrentMaskEquipped;
+    [SerializeField] RSE_OnUpdateUIInventory rseOnUpdateUIInventory;
 
     private void Awake()
     {
@@ -56,10 +58,14 @@ public class S_PlayerMask : MonoBehaviour
         if (!_playerCurrentMaskUnlocked.Value.ContainsKey(mask))
         {
             _playerCurrentMaskUnlocked.Value.Add(mask, true);
+
+            rseOnUpdateUIInventory.Call();
         }
         else if (_playerCurrentMaskUnlocked.Value[mask] == false)
         {
             _playerCurrentMaskUnlocked.Value[mask] = true;
+
+            rseOnUpdateUIInventory.Call();
         }
         else
         {
