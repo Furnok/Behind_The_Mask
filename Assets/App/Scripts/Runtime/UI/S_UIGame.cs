@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class S_UIGame : MonoBehaviour
 {
-    //[Header("Settings")]
-
     [TabGroup("References")]
     [Title("Sliders")]
     [SerializeField] private Slider sliderStamina;
