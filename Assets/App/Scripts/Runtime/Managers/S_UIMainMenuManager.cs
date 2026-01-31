@@ -34,6 +34,12 @@ public class S_UIMainMenuManager : MonoBehaviour
     [TabGroup("Inputs")]
     [SerializeField] private RSE_OnCloseAllWindows rseOnCloseAllWindows;
 
+    [TabGroup("Inputs")]
+    [SerializeField] private RSE_OnFadeIn rseOnFadeIn;
+
+    [TabGroup("Inputs")]
+    [SerializeField] private RSE_OnFadeOut rseOnFadeOut;
+
     [TabGroup("Outputs")]
     [SerializeField] private RSE_OnShowMouseCursor rseOnShowMouseCursor;
 
@@ -55,6 +61,8 @@ public class S_UIMainMenuManager : MonoBehaviour
         rseOnOpenWindow.action += AlreadyOpen;
         rseOnCloseWindow.action += CloseWindow;
         rseOnCloseAllWindows.action += CloseAllWindows;
+        rseOnFadeIn.action += FadeIn;
+        rseOnFadeOut.action += FadeOut;
     }
 
     private void OnDisable()
@@ -63,6 +71,8 @@ public class S_UIMainMenuManager : MonoBehaviour
         rseOnOpenWindow.action -= AlreadyOpen;
         rseOnCloseWindow.action -= CloseWindow;
         rseOnCloseAllWindows.action -= CloseAllWindows;
+        rseOnFadeIn.action -= FadeIn;
+        rseOnFadeOut.action -= FadeOut;
     }
 
     private void Setup()

@@ -1016,6 +1016,8 @@ MonoBehaviour:
   rseOnOpenWindow: {fileID: 11400000, guid: e2a9b79d13ec2ab4eb58554a2220ad03, type: 2}
   rseOnCloseWindow: {fileID: 11400000, guid: 99938650f1986af4a9799dcbc90d81c9, type: 2}
   rseOnCloseAllWindows: {fileID: 11400000, guid: 9ef083c49d92238448ebc0e87e296616, type: 2}
+  rseOnFadeIn: {fileID: 11400000, guid: 88a497e7992ebba408246ff9309df6e5, type: 2}
+  rseOnFadeOut: {fileID: 11400000, guid: bc8e79bbd9547214c9132a9ff5afe288, type: 2}
   rseOnShowMouseCursor: {fileID: 11400000, guid: 05d1a18ef32d0254882c58dc4049dbb4, type: 2}
   rsoCurrentWindows: {fileID: 11400000, guid: 1c6f9f6f22c008c47ab3343fb3dc201a, type: 2}
   ssoFadeTime: {fileID: 11400000, guid: 5aebcac51f5a6a043831b996e7962130, type: 2}
@@ -1936,6 +1938,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdcd4122835e3b449ce71b8ec67e57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelName:
+    sceneName: SC_Game
+    sceneGUID: 8124e5870f4fd4c779e7a5f994e84ad1
+    scenePath: Assets/App/Scenes/SC_Game.unity
+  rseOnFadeOut: {fileID: 11400000, guid: bc8e79bbd9547214c9132a9ff5afe288, type: 2}
+  rseOnOpenWindow: {fileID: 11400000, guid: e2a9b79d13ec2ab4eb58554a2220ad03, type: 2}
+  rseOnCloseAllWindows: {fileID: 11400000, guid: 9ef083c49d92238448ebc0e87e296616, type: 2}
+  rseOnQuitGame: {fileID: 11400000, guid: bec6c0ff7da6d5148bc028b0554817af, type: 2}
+  rseOnHideMouseCursor: {fileID: 11400000, guid: dfd0f540889f6374fa1c8b6d1fd64f5a, type: 2}
+  rseOnLoadScene: {fileID: 11400000, guid: 4083bca5e19e93f44b63273be32064b6, type: 2}
+  rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
+  ssoFadeTime: {fileID: 11400000, guid: 5aebcac51f5a6a043831b996e7962130, type: 2}
 --- !u!1 &8621132059623243539
 GameObject:
   m_ObjectHideFlags: 0
