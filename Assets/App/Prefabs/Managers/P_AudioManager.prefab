@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0f194b9e0f9b648ba13a181fb322a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeFadeInAudio: 3
-  timeFadeOutAudio: 3
+  timeFadeInAudio: 1
+  timeFadeOutAudio: 21
   volumeMax: 0.4
   audioSourcePrefab: {fileID: 7044789291307781648, guid: ef2c1b4e3acbc34409e52ad7a590e559, type: 3}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}

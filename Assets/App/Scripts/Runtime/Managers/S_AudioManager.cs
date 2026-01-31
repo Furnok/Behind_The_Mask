@@ -7,9 +7,11 @@ public class S_AudioManager : MonoBehaviour
 {
     [TabGroup("Settings")]
     [Title("Parameters")]
+    [SuffixLabel("s", Overlay = true)]
     [SerializeField] private float timeFadeInAudio;
 
     [TabGroup("Settings")]
+    [SuffixLabel("s", Overlay = true)]
     [SerializeField] private float timeFadeOutAudio;
 
     [TabGroup("Settings")]

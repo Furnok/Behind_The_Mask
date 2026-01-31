@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class S_UIMainMenuManager : MonoBehaviour
 {
@@ -85,7 +86,7 @@ public class S_UIMainMenuManager : MonoBehaviour
 
             StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
             {
-                rseOnShowMouseCursor.Call();
+                if (Gamepad.current == null) rseOnShowMouseCursor.Call();
 
                 defaultTween?.Kill();
 

@@ -7,7 +7,13 @@ public class S_UIMainMenu : MonoBehaviour
     [Title("Levels")]
     [SerializeField] private S_SceneReference levelName;
 
-    //[Header("References")]
+    [TabGroup("References")]
+    [Title("Settings Window")]
+    [SerializeField] private GameObject settingsWindow;
+
+    [TabGroup("References")]
+    [Title("Credits Window")]
+    [SerializeField] private GameObject creditsWindow;
 
     //[Header("Inputs")]
 
@@ -30,39 +36,76 @@ public class S_UIMainMenu : MonoBehaviour
     [SerializeField] private RSE_OnLoadScene rseOnLoadScene;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_StopAllAudio rseStopAllAudio;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSO_Navigation rsoNavigation;
 
     [TabGroup("Outputs")]
     [SerializeField] private SSO_FadeTime ssoFadeTime;
 
+    private bool isTransit = false;
+
+    private void OnEnable()
+    {
+        isTransit = false;
+    }
+
     public void StartGame()
     {
-        rseOnFadeOut.Call();
-
-        StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
+        if (!isTransit)
         {
-            rseOnCloseAllWindows.Call();
-            rsoNavigation.Value.selectableFocus = null;
+            isTransit = true;
 
-            //rseOnGamePause.Call(false);
-            rseOnHideMouseCursor.Call();
+            rseOnFadeOut.Call();
 
-            rseOnLoadScene.Call(levelName.Name);
-        }));
+            rseStopAllAudio.Call();
+
+            StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
+            {
+                rseOnCloseAllWindows.Call();
+                rsoNavigation.Value.selectableFocus = null;
+
+                rseOnHideMouseCursor.Call();
+
+                StartCoroutine(S_Utils.DelayRealTime(0.8f, () => rseOnLoadScene.Call(levelName.Name)));
+            }));
+        }
     }
 
     public void Settings()
     {
-
+        if (!isTransit)
+        {
+            rseOnCloseAllWindows.Call();
+            rsoNavigation.Value.selectableFocus = null;
+            rseOnOpenWindow.Call(settingsWindow);
+        }
     }
 
     public void Credits()
     {
-
+        if (!isTransit)
+        {
+            rseOnCloseAllWindows.Call();
+            rsoNavigation.Value.selectableFocus = null;
+            rseOnOpenWindow.Call(creditsWindow);
+        }
     }
 
     public void QuitGame()
     {
-        
+        if (!isTransit)
+        {
+            isTransit = true;
+
+            rseOnFadeOut.Call();
+
+            StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
+            {
+                rseOnQuitGame.Call();
+                rsoNavigation.Value.selectableFocus = null;
+            }));
+        }
     }
 }
