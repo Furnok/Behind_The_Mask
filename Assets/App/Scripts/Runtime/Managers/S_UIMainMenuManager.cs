@@ -57,6 +57,8 @@ public class S_UIMainMenuManager : MonoBehaviour
         rseOnCloseAllWindows.action += CloseAllWindows;
         rseOnFadeIn.action += FadeIn;
         rseOnFadeOut.action += FadeOut;
+
+        rsoCurrentWindows.Value = new();
     }
 
     private void OnDisable()

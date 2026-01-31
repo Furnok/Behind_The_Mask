@@ -241,12 +241,14 @@ MonoBehaviour:
   fadeWindow: {fileID: 1384483415}
   fadeCanvasGroup: {fileID: 1384483417}
   rseOnMenu: {fileID: 11400000, guid: e56b4202ad366f0439455c67d75d6e95, type: 2}
+  rseOnGame: {fileID: 11400000, guid: d686c7676d86e514ea906a2b23d4e0ac, type: 2}
   rseOnOpenWindow: {fileID: 11400000, guid: e2a9b79d13ec2ab4eb58554a2220ad03, type: 2}
   rseOnCloseWindow: {fileID: 11400000, guid: 99938650f1986af4a9799dcbc90d81c9, type: 2}
   rseOnCloseAllWindows: {fileID: 11400000, guid: 9ef083c49d92238448ebc0e87e296616, type: 2}
   rseOnFadeIn: {fileID: 11400000, guid: 88a497e7992ebba408246ff9309df6e5, type: 2}
   rseOnFadeOut: {fileID: 11400000, guid: bc8e79bbd9547214c9132a9ff5afe288, type: 2}
   rseOnEscapeInput: {fileID: 11400000, guid: 59753f43be0f3f64381174235d4e6bea, type: 2}
+  rseOnGamePause: {fileID: 11400000, guid: 0227ae7847beac54396feb1b837a19a8, type: 2}
   rsoCurrentWindows: {fileID: 11400000, guid: 1c6f9f6f22c008c47ab3343fb3dc201a, type: 2}
   ssoFadeTime: {fileID: 11400000, guid: 5aebcac51f5a6a043831b996e7962130, type: 2}
   ssoDisplayWindowTime: {fileID: 11400000, guid: 43e34502203d588499c46defb3523cd8, type: 2}
@@ -1791,6 +1793,7 @@ MonoBehaviour:
   rseOnEscapeInput: {fileID: 11400000, guid: 59753f43be0f3f64381174235d4e6bea, type: 2}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   rseOnResetFocus: {fileID: 11400000, guid: 0b5f77e2d22436549bb64fcd53c34a54, type: 2}
+  rseOnGamePause: {fileID: 11400000, guid: 0227ae7847beac54396feb1b837a19a8, type: 2}
   rsoCurrentWindows: {fileID: 11400000, guid: 1c6f9f6f22c008c47ab3343fb3dc201a, type: 2}
   rsoNavigation: {fileID: 11400000, guid: ca4238c5014d059489da1004b253b44f, type: 2}
   ssoFadeTime: {fileID: 11400000, guid: 5aebcac51f5a6a043831b996e7962130, type: 2}

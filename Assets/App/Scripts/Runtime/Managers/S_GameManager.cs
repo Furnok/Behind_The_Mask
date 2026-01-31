@@ -28,6 +28,9 @@ public class S_GameManager : MonoBehaviour
     [SerializeField] private RSE_OnMenu rseOnMenu;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnGame rseOnGame;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
     private void Start()
@@ -47,7 +50,7 @@ public class S_GameManager : MonoBehaviour
             }
             else
             {
-
+                rseOnGame.Call();
             }
         }
     }

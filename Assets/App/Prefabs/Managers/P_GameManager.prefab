@@ -51,11 +51,22 @@ MonoBehaviour:
     mixerGroup: {fileID: 2146873307849394114, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 1
     loop: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   audioGame:
     clip: {fileID: 8300000, guid: 0c5ed42f3219ecf4db822d686f3cac01, type: 3}
     mixerGroup: {fileID: 2146873307849394114, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
     fade: 1
     loop: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   rseOnMainMenu: {fileID: 11400000, guid: 4b91d8281b5ec7e4cb35b43b83736d93, type: 2}
   rseOnMenu: {fileID: 11400000, guid: e56b4202ad366f0439455c67d75d6e95, type: 2}
+  rseOnGame: {fileID: 11400000, guid: d686c7676d86e514ea906a2b23d4e0ac, type: 2}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}

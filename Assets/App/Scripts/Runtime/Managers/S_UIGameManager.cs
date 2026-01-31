@@ -21,6 +21,9 @@ public class S_UIGameManager : MonoBehaviour
     [TabGroup("Outputs")]
     [SerializeField] private RSE_OnMenu rseOnMenu;
 
+    [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnGame rseOnGame;
+
     [TabGroup("Inputs")]
     [SerializeField] private RSE_OnOpenWindow rseOnOpenWindow;
 
@@ -40,6 +43,9 @@ public class S_UIGameManager : MonoBehaviour
     [SerializeField] private RSE_OnEscapeInput rseOnEscapeInput;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnGamePause rseOnGamePause;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSO_CurrentWindows rsoCurrentWindows;
 
     [TabGroup("Outputs")]
@@ -52,18 +58,22 @@ public class S_UIGameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        rseOnMenu.action += Setup;
+        rseOnMenu.action += SetupMenu;
+        rseOnGame.action += SetupGame;
         rseOnOpenWindow.action += AlreadyOpen;
         rseOnCloseWindow.action += CloseWindow;
         rseOnCloseAllWindows.action += CloseAllWindows;
         rseOnFadeIn.action += FadeIn;
         rseOnFadeOut.action += FadeOut;
         rseOnEscapeInput.action += PauseGame;
+
+        rsoCurrentWindows.Value = new();
     }
 
     private void OnDisable()
     {
-        rseOnMenu.action -= Setup;
+        rseOnMenu.action -= SetupMenu;
+        rseOnGame.action -= SetupGame;
         rseOnOpenWindow.action -= AlreadyOpen;
         rseOnCloseWindow.action -= CloseWindow;
         rseOnCloseAllWindows.action -= CloseAllWindows;
@@ -81,10 +91,12 @@ public class S_UIGameManager : MonoBehaviour
         if (rsoCurrentWindows.Value.Count < 1 && !menuWindow.activeInHierarchy)
         {
             OpenWindow(menuWindow);
+
+            rseOnGamePause.Call(true);
         }
     }
 
-    private void Setup()
+    private void SetupMenu()
     {
         fadeWindow.SetActive(true);
 
@@ -95,9 +107,25 @@ public class S_UIGameManager : MonoBehaviour
             StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
             {
                 OpenWindow(menuWindow);
+
+                rseOnGamePause.Call(true);
             }));
         }));
+    }
 
+    private void SetupGame()
+    {
+        fadeWindow.SetActive(true);
+
+        StartCoroutine(S_Utils.DelayRealTime(0.2f, () =>
+        {
+            FadeIn();
+
+            StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
+            {
+
+            }));
+        }));
     }
 
     private void AlreadyOpen(GameObject window)

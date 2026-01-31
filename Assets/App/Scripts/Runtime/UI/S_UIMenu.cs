@@ -50,6 +50,9 @@ public class S_UIMenu : MonoBehaviour
     [SerializeField] private RSE_OnResetFocus rseOnResetFocus;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnGamePause rseOnGamePause;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSO_CurrentWindows rsoCurrentWindows;
 
     [TabGroup("Outputs")]
@@ -90,6 +93,8 @@ public class S_UIMenu : MonoBehaviour
             rseOnCloseAllWindows.Call();
             rsoNavigation.Value.selectableDefault = null;
             rseOnResetFocus.Call();
+
+            rseOnGamePause.Call(false);
         }
     }
 
@@ -118,7 +123,11 @@ public class S_UIMenu : MonoBehaviour
 
                 rseOnHideMouseCursor.Call();
 
-                StartCoroutine(S_Utils.DelayRealTime(0.8f, () => rseOnLoadScene.Call(levelName.Name)));
+                StartCoroutine(S_Utils.DelayRealTime(0.8f, () =>
+                {
+                    rseOnLoadScene.Call(levelName.Name);
+                    rseOnGamePause.Call(false);
+                }));
             }));
         }
     }
