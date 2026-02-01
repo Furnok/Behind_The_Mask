@@ -1,6 +1,5 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 public class S_UIGameManager : MonoBehaviour
