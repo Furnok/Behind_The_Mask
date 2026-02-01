@@ -90,16 +90,18 @@ public class S_EnemyMotor : MonoBehaviour
     {
         if (!_agent.enabled) return false;
 
-        if (NavMesh.SamplePosition(pos, out NavMeshHit hit, sampleRadius, _agent.areaMask))
-        {
-            _agent.isStopped = false;
-            _currentDestination = hit.position;
-            _hasActiveDestination = true;
-            _agent.SetDestination(_currentDestination);
-            return true;
-        }
+        if (!NavMesh.SamplePosition(pos, out NavMeshHit hit, sampleRadius, _agent.areaMask))
+            return false;
 
-        return false;
+        NavMeshPath path = new NavMeshPath();
+        if (!_agent.CalculatePath(hit.position, path)) return false;
+        if (path.status != NavMeshPathStatus.PathComplete) return false;
+
+        _agent.isStopped = false;
+        _currentDestination = hit.position;
+        _hasActiveDestination = true;
+        _agent.SetDestination(_currentDestination);
+        return true;
     }
 
     public bool HasReachedDestination(float arrivedDistance = 0.25f)
