@@ -27,6 +27,7 @@ public class S_EnemyBrain : MonoBehaviour
     [SerializeField] float _distanceToPlayerForStoppingChase = 3f;
     [SerializeField] private S_ClassAudio audioSee;
     [SerializeField] private S_ClassAudio audioCaught;
+    private bool caught = false;
 
 
     EState _state = EState.Walk;
@@ -245,7 +246,6 @@ public class S_EnemyBrain : MonoBehaviour
 
             case EState.Chase:
                 _motor.SetSpeedChase();
-                _onPlayAudio.Call(audioSee);
 
                 _delayTimer += Time.deltaTime;
                 if (_delayTimer >= _chaseDelay)
@@ -263,7 +263,12 @@ public class S_EnemyBrain : MonoBehaviour
                         _stateText.text = "";
 
                         Debug.Log("Player Caught by Enemy");
-                        _onPlayAudio.Call(audioCaught);
+
+                        if (!caught)
+                        {
+                            caught = true;
+                            _onPlayAudio.Call(audioCaught);
+                        }
                     }
                     else
                     {
@@ -299,6 +304,11 @@ public class S_EnemyBrain : MonoBehaviour
     void SwitchState(EState newState)
     {
         if (_state == newState) return;
+
+        if (newState == EState.Chase)
+        {
+            _onPlayAudio.Call(audioSee);
+        }
 
         _state = newState;
         _delayTimer = 0f;
