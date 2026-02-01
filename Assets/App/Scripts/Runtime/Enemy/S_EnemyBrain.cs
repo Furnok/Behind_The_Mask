@@ -18,12 +18,16 @@ public class S_EnemyBrain : MonoBehaviour
     [Header("Outputs")]
     [SerializeField] RSO_PlayerCurrentMaskEquipped _currentMask;
     [SerializeField] RSE_OnPlayerGettingCatch _onPlayerGettingCatch;
+    [SerializeField] RSE_PlayAudio _onPlayAudio;
 
     [Header("Settings")]
     [SerializeField] float _chaseDelay = 1.0f;
     [SerializeField] float _lostTargetTime = 1.5f;
     [SerializeField] Mask _enemyMask;
     [SerializeField] float _distanceToPlayerForStoppingChase = 3f;
+    [SerializeField] private S_ClassAudio audioSee;
+    [SerializeField] private S_ClassAudio audioCaught;
+
 
     EState _state = EState.Walk;
     float _delayTimer = 0f;
@@ -241,6 +245,7 @@ public class S_EnemyBrain : MonoBehaviour
 
             case EState.Chase:
                 _motor.SetSpeedChase();
+                _onPlayAudio.Call(audioSee);
 
                 _delayTimer += Time.deltaTime;
                 if (_delayTimer >= _chaseDelay)
@@ -258,6 +263,7 @@ public class S_EnemyBrain : MonoBehaviour
                         _stateText.text = "";
 
                         Debug.Log("Player Caught by Enemy");
+                        _onPlayAudio.Call(audioCaught);
                     }
                     else
                     {

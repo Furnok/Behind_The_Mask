@@ -437,10 +437,33 @@ MonoBehaviour:
   _stateText: {fileID: 1825104753453597647}
   _currentMask: {fileID: 11400000, guid: 8294228d4caf6864e82b8769fc045881, type: 2}
   _onPlayerGettingCatch: {fileID: 11400000, guid: 11bf26c38a8eca94c8797370e7e68fef, type: 2}
+  _onPlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   _chaseDelay: 1
   _lostTargetTime: 1.5
   _enemyMask: 1
   _distanceToPlayerForStoppingChase: 3
+  audioSee:
+    clip: {fileID: 8300000, guid: 6d7fa147497b91442892ecf2f8f9e11b, type: 3}
+    mixerGroup: {fileID: -6525697756178178128, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
+    canPause: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
+  audioCaught:
+    clip: {fileID: 8300000, guid: dc77742ab5ee49e4bbf81245b85a74fe, type: 3}
+    mixerGroup: {fileID: -6525697756178178128, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
+    canPause: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
 --- !u!114 &3621455628616771972
 MonoBehaviour:
   m_ObjectHideFlags: 0
