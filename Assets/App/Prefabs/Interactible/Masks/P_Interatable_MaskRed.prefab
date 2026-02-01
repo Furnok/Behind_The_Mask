@@ -79,12 +79,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _priority: 0
+  index: 2
   _isInteractable: 1
   _maskType: 4
   colliderMask: {fileID: 2586656023060981872}
   _maskVisuals: {fileID: 485730878468407589}
   _onPickUpMask: {fileID: 11400000, guid: 8416929ac1dc3e944acd0a0c2c62507c, type: 2}
   rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
+  rseOnUIError: {fileID: 11400000, guid: 3df7eb861fac667478af979178cbad2b, type: 2}
 --- !u!135 &2586656023060981872
 SphereCollider:
   m_ObjectHideFlags: 0

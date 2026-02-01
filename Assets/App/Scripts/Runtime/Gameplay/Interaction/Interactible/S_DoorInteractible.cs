@@ -50,7 +50,7 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
         }
         else
         {
-            rseOnUIError.Call("You don't have the right Mask!");
+            rseOnUIError.Call("You don't have the right Mask!", Color.red);
         }
     }
 
@@ -90,7 +90,6 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
     {
         if (other.CompareTag("Detect"))
         {
-            Debug.Log(other);
             Close();
         }
     }

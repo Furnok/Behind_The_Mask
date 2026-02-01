@@ -48,7 +48,7 @@ public class S_DoorInteractible_Key : MonoBehaviour, IInteractable
         }
         else
         {
-            rseOnUIError.Call("You don't have the Key!");
+            rseOnUIError.Call("You don't have the Key!", Color.red);
         }
     }
 

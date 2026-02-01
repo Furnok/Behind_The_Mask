@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 public class S_UIGameManager : MonoBehaviour
@@ -21,6 +22,20 @@ public class S_UIGameManager : MonoBehaviour
 
     [TabGroup("References")]
     [SerializeField] private CanvasGroup menuCanvasGroup;
+
+    [TabGroup("References")]
+    [Title("Game Over Window")]
+    [SerializeField] private GameObject goWindow;
+
+    [TabGroup("References")]
+    [SerializeField] private CanvasGroup goCanvasGroup;
+
+    [TabGroup("References")]
+    [Title("Win Window")]
+    [SerializeField] private GameObject winWindow;
+
+    [TabGroup("References")]
+    [SerializeField] private CanvasGroup winCanvasGroup;
 
     [TabGroup("References")]
     [Title("Fade Window")]
@@ -50,6 +65,12 @@ public class S_UIGameManager : MonoBehaviour
     [TabGroup("Inputs")]
     [SerializeField] private RSE_OnFadeOut rseOnFadeOut;
 
+    [TabGroup("Inputs")]
+    [SerializeField] private RSE_OnGameOver rseOnGameOver;
+
+    [TabGroup("Inputs")]
+    [SerializeField] private RSE_OnGameWin rseOnGameWin;
+
     [TabGroup("Outputs")]
     [SerializeField] private RSE_OnEscapeInput rseOnEscapeInput;
 
@@ -70,6 +91,7 @@ public class S_UIGameManager : MonoBehaviour
 
     private Tween gameTween = null;
     private Tween fadeTween = null;
+    private Tween endTween = null;
 
     private void OnEnable()
     {
@@ -82,6 +104,8 @@ public class S_UIGameManager : MonoBehaviour
         rseOnFadeOut.action += FadeOut;
         rseOnEscapeInput.action += PauseGame;
         rseOnBookInput.action += DisplayBook;
+        rseOnGameOver.action += GameOver;
+        rseOnGameWin.action += GameWin;
 
         rsoCurrentWindows.Value = new();
     }
@@ -97,6 +121,8 @@ public class S_UIGameManager : MonoBehaviour
         rseOnFadeOut.action -= FadeOut;
         rseOnEscapeInput.action -= PauseGame;
         rseOnBookInput.action -= DisplayBook;
+        rseOnGameOver.action -= GameOver;
+        rseOnGameWin.action -= GameWin;
 
         fadeTween?.Kill();
 
@@ -105,7 +131,7 @@ public class S_UIGameManager : MonoBehaviour
 
     private void PauseGame()
     {
-        if (rsoCurrentWindows.Value.Count < 1 && !menuWindow.activeInHierarchy)
+        if (rsoCurrentWindows.Value.Count < 1 && !menuWindow.activeInHierarchy && !goWindow.activeInHierarchy && !winWindow.activeInHierarchy)
         {
             OpenWindow(menuWindow);
 
@@ -121,12 +147,9 @@ public class S_UIGameManager : MonoBehaviour
         {
             FadeIn();
 
-            StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
-            {
-                OpenWindow(menuWindow);
+            OpenWindow(menuWindow);
 
-                rseOnGamePause.Call(true);
-            }));
+            rseOnGamePause.Call(true);
         }));
     }
 
@@ -138,15 +161,12 @@ public class S_UIGameManager : MonoBehaviour
         {
             FadeIn();
 
-            StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
-            {
-                gameTween?.Kill();
+            gameTween?.Kill();
 
-                gameTween = gameCanvasGroup.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
-                {
-                    gameWindow.SetActive(true);
-                });
-            }));
+            gameTween = gameCanvasGroup.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
+            {
+                gameWindow.SetActive(true);
+            });
         }));
     }
 
@@ -229,6 +249,30 @@ public class S_UIGameManager : MonoBehaviour
         fadeTween = fadeCanvasGroup.DOFade(1f, ssoFadeTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
         {
             fadeWindow.SetActive(true);
+        });
+    }
+
+    private void GameOver()
+    {
+        endTween?.Kill();
+
+        endTween = goCanvasGroup.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
+        {
+            goWindow.SetActive(true);
+
+            rseOnGamePause.Call(true);
+        });
+    }
+
+    private void GameWin()
+    {
+        endTween?.Kill();
+
+        endTween = winCanvasGroup.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
+        {
+            winWindow.SetActive(true);
+
+            rseOnGamePause.Call(true);
         });
     }
 }

@@ -84,15 +84,12 @@ public class S_UIMainMenuManager : MonoBehaviour
         {
             FadeIn();
 
-            StartCoroutine(S_Utils.DelayRealTime(ssoFadeTime.Value.time, () =>
-            {
-                mainMenuTween?.Kill();
+            mainMenuTween?.Kill();
 
-                mainMenuTween = mainMenuCanvasGroup.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
-                {
-                    mainMenuWindow.SetActive(true);
-                });
-            }));
+            mainMenuTween = mainMenuCanvasGroup.DOFade(1f, ssoDisplayWindowTime.Value.time).SetEase(Ease.Linear).SetUpdate(true).OnStart(() =>
+            {
+                mainMenuWindow.SetActive(true);
+            });
         }));
 
     }

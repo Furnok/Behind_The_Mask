@@ -175,7 +175,7 @@ public class S_UIGame : MonoBehaviour
         }
     }
 
-    private void DisplayError(string text)
+    private void DisplayError(string text, Color color)
     {
         if (errorCoroutine != null)
         {
@@ -184,6 +184,7 @@ public class S_UIGame : MonoBehaviour
 
             objError.SetActive(false);
             textError.text = "";
+            textError.color = Color.black;
             canvasGroupError.alpha = 0f;
         }
 
@@ -193,6 +194,7 @@ public class S_UIGame : MonoBehaviour
         {
             objError.SetActive(true);
             textError.text = text;
+            textError.color = color;
 
         }).OnComplete(() =>
         {

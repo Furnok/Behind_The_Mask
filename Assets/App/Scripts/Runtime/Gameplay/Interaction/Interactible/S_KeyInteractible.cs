@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class S_KeyInteractible : MonoBehaviour, IInteractable
@@ -15,6 +16,7 @@ public class S_KeyInteractible : MonoBehaviour, IInteractable
     [Header("Outputs")]
     [SerializeField] RSO_HaveKey _haveKey;
     [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
+    [SerializeField] private RSE_OnUIError rseOnUIError;
 
     public int Priority => _priority;
     public Transform Transform => transform;
@@ -36,5 +38,6 @@ public class S_KeyInteractible : MonoBehaviour, IInteractable
         colliderkey.enabled = false;
 
         rseOnUIInterract.Call(false);
+        rseOnUIError.Call("You picked up the Key!", Color.green);
     }
 }
