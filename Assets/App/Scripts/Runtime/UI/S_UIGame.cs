@@ -10,6 +10,10 @@ using UnityEngine.UI;
 public class S_UIGame : MonoBehaviour
 {
     [TabGroup("Settings")]
+    [Title("Audio")]
+    [SerializeField] private S_ClassAudio audioDisplay;
+
+    [TabGroup("Settings")]
     [Title("Colors")]
     [SerializeField] private Color32 colorFocus;
 
@@ -69,6 +73,9 @@ public class S_UIGame : MonoBehaviour
 
     [TabGroup("Inputs")]
     [SerializeField] private RSO_CurrentStamina rsoSetStaminaSliderValue;
+
+    [TabGroup("Outputs")]
+    [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
     [TabGroup("Outputs")]
     [SerializeField] private RSO_PlayerCurrentMaskUnlocked rsoPlayerCurrentMaskUnlocked;
@@ -195,6 +202,8 @@ public class S_UIGame : MonoBehaviour
             objError.SetActive(true);
             textError.text = text;
             textError.color = color;
+
+            rsePlayAudio.Call(audioDisplay);
 
         }).OnComplete(() =>
         {

@@ -16307,6 +16307,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772de0732034de145a603350430bc854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioDisplay:
+    clip: {fileID: 8300000, guid: b5bc28cea21c67646a5e175049361fd0, type: 3}
+    mixerGroup: {fileID: -1568963159348206032, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
+    canPause: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   colorFocus:
     serializedVersion: 2
     rgba: 4278245375
@@ -16341,6 +16352,7 @@ MonoBehaviour:
   rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
   rseOnUIError: {fileID: 11400000, guid: 3df7eb861fac667478af979178cbad2b, type: 2}
   rsoSetStaminaSliderValue: {fileID: 11400000, guid: dabcdcdfbd052fb449c97ce24ee20540, type: 2}
+  rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   rsoPlayerCurrentMaskUnlocked: {fileID: 11400000, guid: bd45e072b13f56442983809a8904903a, type: 2}
   ssoPlayerSettings: {fileID: 11400000, guid: 8cc4ba678eb7d4944a5c88680ffdf03f, type: 2}
   ssoSliderTime: {fileID: 11400000, guid: b34dc3de126efdb429860ae578773ea7, type: 2}
