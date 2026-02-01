@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76b0b415bd7e5942a15becb3c7488bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coneAngle: 60
+  _origin: {fileID: 5940591338507866869}
   _onInteractInput: {fileID: 11400000, guid: 5b7259b7d795a3b4898622239cdfdd8c, type: 2}
   rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
 --- !u!135 &491620632111878751
@@ -565,6 +567,7 @@ GameObject:
   - component: {fileID: 2015074597568317679}
   - component: {fileID: 4012831869044213176}
   - component: {fileID: 353448605670476894}
+  - component: {fileID: 1436326763941862770}
   m_Layer: 6
   m_Name: P_Player
   m_TagString: Player
@@ -689,6 +692,27 @@ MonoBehaviour:
   _playerCurrentMaskEquipped: {fileID: 11400000, guid: 8294228d4caf6864e82b8769fc045881, type: 2}
   rseOnUpdateUIInventory: {fileID: 11400000, guid: 109cb71d3ec8d9e4ab6ffc2cb25b6a90, type: 2}
   rseOnEquippedMaskUI: {fileID: 11400000, guid: 464eccb542f98ba428f1cc6623785f89, type: 2}
+--- !u!114 &1436326763941862770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8832956333898858866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595842ef8c5b6b947915e9283d941688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onPlayerGettingCatch: {fileID: 11400000, guid: 11bf26c38a8eca94c8797370e7e68fef, type: 2}
+  _onGameOver: {fileID: 11400000, guid: 6d3cacf7a09b5444dbf03f596a99596e, type: 2}
+  _cam: {fileID: 2183715599515162159}
+  _cameraPivot: {fileID: 6288016406504403905}
+  _duration: 0.35
+  _fovOnScream: 35
+  _shakeDuration: 0.25
+  _shakeStrength: 0.25
+  _delayToCallGameOVer: 5
 --- !u!1 &8998856993452211249
 GameObject:
   m_ObjectHideFlags: 0

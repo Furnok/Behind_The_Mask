@@ -398,6 +398,7 @@ MonoBehaviour:
   _patrol: {fileID: 3621455628616771972}
   _navMeshAgent: {fileID: 264353970854654961}
   _currentMask: {fileID: 11400000, guid: 8294228d4caf6864e82b8769fc045881, type: 2}
+  _onPlayerGettingCatch: {fileID: 11400000, guid: 11bf26c38a8eca94c8797370e7e68fef, type: 2}
   _chaseDelay: 1
   _lostTargetTime: 1.5
   _enemyMask: 1

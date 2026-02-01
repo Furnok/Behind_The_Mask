@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 6564683297646590790}
+  _onPlayerGettingCatch: {fileID: 11400000, guid: 11bf26c38a8eca94c8797370e7e68fef, type: 2}
   rseOnMoveInput: {fileID: 11400000, guid: 0813bf0c20d87bb4d81ab9b77ed9f7a1, type: 2}
   rseOnLookInput: {fileID: 11400000, guid: c0acbd077146ec544977cd77832f9699, type: 2}
   rseOnInteractInput: {fileID: 11400000, guid: 5b7259b7d795a3b4898622239cdfdd8c, type: 2}

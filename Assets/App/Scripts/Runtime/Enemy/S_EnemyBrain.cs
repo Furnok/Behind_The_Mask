@@ -13,6 +13,7 @@ public class S_EnemyBrain : MonoBehaviour
 
     [Header("Outputs")]
     [SerializeField] RSO_PlayerCurrentMaskEquipped _currentMask;
+    [SerializeField] RSE_OnPlayerGettingCatch _onPlayerGettingCatch;
 
     [Header("Settings")]
     [SerializeField] float _chaseDelay = 1.0f;
@@ -222,7 +223,8 @@ public class S_EnemyBrain : MonoBehaviour
                     if(Vector3.Distance(transform.position, _perception.PlayerPosition) <= _distanceToPlayerForStoppingChase)
                     {
                         _motor.Stop();
-                        Debug.Log("Reached Player Position"); //Call death
+                        _onPlayerGettingCatch.Call(transform);
+                        Debug.Log("Player Caught by Enemy");
                     }
                 }
                 else

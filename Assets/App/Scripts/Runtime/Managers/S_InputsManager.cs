@@ -8,6 +8,10 @@ public class S_InputsManager : MonoBehaviour
     [Title("Player Input")]
     [SerializeField] private PlayerInput playerInput;
 
+    [TabGroup("Inputs")]
+    [SerializeField] RSE_OnPlayerGettingCatch _onPlayerGettingCatch;
+
+
     [TabGroup("Outputs")]
     [SerializeField] private RSE_OnMoveInput rseOnMoveInput;
 
@@ -70,6 +74,8 @@ public class S_InputsManager : MonoBehaviour
         iaPlayerInput.Player.Sprint.canceled += OnSprintCancelChanged;
 
         iaPlayerInput.Player.Book.performed += OnBookChanged;
+
+        _onPlayerGettingCatch.action += DesactivatePlayerInput;
     }
 
     private void OnDisable()
@@ -96,6 +102,13 @@ public class S_InputsManager : MonoBehaviour
         iaPlayerInput.Player.Sprint.canceled -= OnSprintCancelChanged;
 
         iaPlayerInput.Player.Book.performed -= OnBookChanged;
+
+        _onPlayerGettingCatch.action -= DesactivatePlayerInput;
+    }
+
+    void DesactivatePlayerInput(Transform transform)
+    {
+        iaPlayerInput.Player.Disable();
     }
 
     private void OnMoveChanged(InputAction.CallbackContext ctx)
