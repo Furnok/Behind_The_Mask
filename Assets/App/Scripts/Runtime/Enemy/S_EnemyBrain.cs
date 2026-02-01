@@ -10,6 +10,8 @@ public class S_EnemyBrain : MonoBehaviour
     [SerializeField] S_EnemyMotor _motor;
     [SerializeField] S_EnemyPatrol _patrol;
     [SerializeField] NavMeshAgent _navMeshAgent;
+    [SerializeField] Animator _animator;
+    [SerializeField] Transform _headTransform;
 
     [Header("Outputs")]
     [SerializeField] RSO_PlayerCurrentMaskEquipped _currentMask;
@@ -25,13 +27,27 @@ public class S_EnemyBrain : MonoBehaviour
     float _delayTimer = 0f;
     float _lostTimer = 0f;
 
+    readonly int IsChasingHash = Animator.StringToHash("IsChasing");
+    readonly int IsWalkingHash = Animator.StringToHash("IsWalking");
+    readonly int IsIdleHash = Animator.StringToHash("IsIdle");
+    readonly int IsObservingHash = Animator.StringToHash("IsObserving");
+    readonly int IsCatchingHash = Animator.StringToHash("IsCatching");
+
     private void OnEnable()
     {
         _state = EState.Walk;
         _delayTimer = 0f;
         _lostTimer = 0f;
         if (_patrol != null) _patrol.SetClosestAsCurrent(transform.position);
-        if (_motor != null && _patrol != null && _patrol.HasPoints) _motor.MoveTo(_patrol.GetCurrentPoint());
+        if (_motor != null && _patrol != null && _patrol.HasPoints)
+        {
+            _motor.MoveTo(_patrol.GetCurrentPoint());
+            PlayAnimation(IsWalkingHash);
+        }
+        else
+        {
+            PlayAnimation(IsIdleHash);
+        }
     }
 
     private void Update()
@@ -198,6 +214,8 @@ public class S_EnemyBrain : MonoBehaviour
             case EState.Walk:
                 _motor.SetSpeedWalk();
 
+                PlayAnimation(IsWalkingHash);
+
                 if (_motor.HasReachedDestination(0.35f))
                 {
                     Vector3 next = _patrol.GetNextDestinationPointOnly();
@@ -208,6 +226,9 @@ public class S_EnemyBrain : MonoBehaviour
             case EState.Observe:
                 _motor.Stop();
                 _motor.LookAt(_perception.PlayerPosition);
+
+                PlayAnimation(IsObservingHash);
+
                 _delayTimer = 0f;
                 break;
 
@@ -220,11 +241,19 @@ public class S_EnemyBrain : MonoBehaviour
                     _motor.MoveTo(_perception.PlayerPosition);
                     _motor.LookAt(_perception.PlayerPosition);
 
-                    if(Vector3.Distance(transform.position, _perception.PlayerPosition) <= _distanceToPlayerForStoppingChase)
+
+                    if (Vector3.Distance(transform.position, _perception.PlayerPosition) <= _distanceToPlayerForStoppingChase)
                     {
                         _motor.Stop();
-                        _onPlayerGettingCatch.Call(transform);
+                        _onPlayerGettingCatch.Call(_headTransform);
+
+                        _animator.SetBool(IsCatchingHash, true);
+
                         Debug.Log("Player Caught by Enemy");
+                    }
+                    else
+                    {
+                        PlayAnimation(IsChasingHash);
                     }
                 }
                 else
@@ -232,6 +261,8 @@ public class S_EnemyBrain : MonoBehaviour
                 break;
 
             case EState.RunAway:
+
+                PlayAnimation(IsChasingHash);
                 _motor.SetSpeedRunAway();
                 _motor.FleeFrom(_perception.PlayerPosition);
                 _delayTimer = 0f;
@@ -257,5 +288,21 @@ public class S_EnemyBrain : MonoBehaviour
 
         if (_state == EState.Walk)
             _patrol.ResetIfNeeded();
+    }
+
+    void PlayAnimation(int hashAnimation)
+    {
+        StopAnimation();
+
+        _animator.SetBool(hashAnimation, true);
+    }
+
+    void StopAnimation()
+    {
+        _animator.SetBool(IsChasingHash, false);
+        _animator.SetBool(IsWalkingHash, false);
+        _animator.SetBool(IsIdleHash, false);
+        _animator.SetBool(IsObservingHash, false);
+        _animator.SetBool(IsCatchingHash, false);
     }
 }
