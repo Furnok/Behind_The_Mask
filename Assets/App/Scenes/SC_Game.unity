@@ -1147,7 +1147,7 @@ Transform:
   m_GameObject: {fileID: 144518094}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -23.6, y: 2, z: 85.58}
+  m_LocalPosition: {x: -23.6, y: 2, z: 85.659}
   m_LocalScale: {x: 2.9197998, y: 6, z: 15.0111}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2686,6 +2686,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Interactable_Door_Mask_Green Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 714215323096692268, guid: 17fc76122a5db994086c56e7c699ff13, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.117
+      objectReference: {fileID: 0}
     - target: {fileID: 4995929403230619114, guid: 17fc76122a5db994086c56e7c699ff13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.568462
@@ -2903,7 +2907,7 @@ Transform:
   m_GameObject: {fileID: 493221913}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -6.51, y: 2.2, z: 44.08}
+  m_LocalPosition: {x: -6.495, y: 2.2, z: 44.08}
   m_LocalScale: {x: 15.5088005, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6035,7 +6039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545689461836126121, guid: 75b7897aa246233448642a34d973d3b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 60.78
+      value: 60.87
       objectReference: {fileID: 0}
     - target: {fileID: 5545689461836126121, guid: 75b7897aa246233448642a34d973d3b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6284,7 +6288,7 @@ Transform:
   m_GameObject: {fileID: 956738281}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000043362375}
-  m_LocalPosition: {x: 8.1, y: 2, z: 88.244446}
+  m_LocalPosition: {x: 8.1, y: 2, z: 88.66}
   m_LocalScale: {x: 1, y: 6, z: 15.0111}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9034,6 +9038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Interactable_Door_Mask_Red Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 671253367926342410, guid: 80b3e8c0ab3f40d449fbc29a60a9db67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.032
+      objectReference: {fileID: 0}
     - target: {fileID: 5038605760362508492, guid: 80b3e8c0ab3f40d449fbc29a60a9db67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6946586
@@ -10357,6 +10365,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1152264416}
     m_Modifications:
+    - target: {fileID: 989574382608291085, guid: 99a598a7f1957734bbeac86d97573263, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2943830485704292137, guid: 99a598a7f1957734bbeac86d97573263, type: 3}
       propertyPath: m_Name
       value: P_Interactable_Door_Key_01
@@ -10371,7 +10383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7936452634135461365, guid: 99a598a7f1957734bbeac86d97573263, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 132.88
+      value: 132.959
       objectReference: {fileID: 0}
     - target: {fileID: 7936452634135461365, guid: 99a598a7f1957734bbeac86d97573263, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10552,7 +10564,7 @@ Transform:
   m_GameObject: {fileID: 1553935516}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5.45, y: 2.2, z: 48}
+  m_LocalPosition: {x: 5.5, y: 2.2, z: 48}
   m_LocalScale: {x: 12, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11837,7 +11849,7 @@ GameObject:
   - component: {fileID: 1695432113}
   - component: {fileID: 1695432112}
   - component: {fileID: 1695432115}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12949,7 +12961,7 @@ Transform:
   m_GameObject: {fileID: 1763919221}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 86.9}
+  m_LocalPosition: {x: 0, y: 0, z: 87.1}
   m_LocalScale: {x: 61.589214, y: 1, z: 51.67451}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14932,7 +14944,7 @@ GameObject:
   - component: {fileID: 1955621783}
   - component: {fileID: 1955621782}
   - component: {fileID: 1955621785}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15847,7 +15859,7 @@ Transform:
   m_GameObject: {fileID: 2036232523}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -12.92, y: 2, z: 76.5}
+  m_LocalPosition: {x: -13.07, y: 2, z: 76.5}
   m_LocalScale: {x: 2.9197998, y: 6, z: 15.0111}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15965,7 +15977,7 @@ Transform:
   m_GameObject: {fileID: 2052818594}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 15.6, y: 2, z: 82.38}
+  m_LocalPosition: {x: 15.6, y: 2, z: 82.081}
   m_LocalScale: {x: 2.9197998, y: 6, z: 15.0111}
   m_ConstrainProportionsScale: 0
   m_Children: []
