@@ -59,10 +59,47 @@ public class S_EnemyMotor : MonoBehaviour
     {
         Vector3 away = (transform.position - playerPos);
         away.y = 0f;
-        if (away.sqrMagnitude < 0.0001f) away = transform.forward;
 
-        Vector3 target = transform.position + away.normalized * 6f;
-        MoveTo(target);
+        if (away.sqrMagnitude < 0.0001f)
+            away = transform.forward;
+
+        away.Normalize();
+
+        float[] distances = { 6f, 4f, 2.5f, 1.5f };
+
+        float[] angles = { 0f, 25f, -25f, 50f, -50f, 90f, -90f, 135f, -135f, 180f };
+
+        Vector3 origin = transform.position;
+
+        foreach (float d in distances)
+        {
+            foreach (float a in angles)
+            {
+                Vector3 dir = Quaternion.Euler(0f, a, 0f) * away;
+                Vector3 candidate = origin + dir * d;
+
+                if (TryMoveToOnNavMesh(candidate, 2.0f))
+                    return;
+            }
+        }
+
+        Stop();
+    }
+
+    bool TryMoveToOnNavMesh(Vector3 pos, float sampleRadius)
+    {
+        if (!_agent.enabled) return false;
+
+        if (NavMesh.SamplePosition(pos, out NavMeshHit hit, sampleRadius, _agent.areaMask))
+        {
+            _agent.isStopped = false;
+            _currentDestination = hit.position;
+            _hasActiveDestination = true;
+            _agent.SetDestination(_currentDestination);
+            return true;
+        }
+
+        return false;
     }
 
     public bool HasReachedDestination(float arrivedDistance = 0.25f)
