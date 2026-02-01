@@ -12553,7 +12553,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Message
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2757a9f2bce263743b2dc16baa7e9f17, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30b824733b613a546a2e5ec327a7aee6, type: 2}
   m_sharedMaterial: {fileID: -9022685198800322167, guid: 2757a9f2bce263743b2dc16baa7e9f17, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

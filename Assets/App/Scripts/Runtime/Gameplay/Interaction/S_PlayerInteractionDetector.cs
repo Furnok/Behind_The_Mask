@@ -11,9 +11,7 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
 
     [Header("Inputs")]
     [SerializeField] RSE_OnInteractInput _onInteractInput;
-
-    [Header("Outputs")]
-    [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
+    [SerializeField] RSE_OnUIInterract _onUIInterract;
 
     //[Header("Outputs")]
 
@@ -42,15 +40,11 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
     private void OnTriggerEnter(Collider other)
     {
         TryAddInteractableFromCollider(other);
-
-        rseOnUIInterract.Call(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
         TryRemoveInteractableFromCollider(other);
-
-        rseOnUIInterract.Call(false);
     }
 
     private void Update()
@@ -68,6 +62,6 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
         if (shouldShow == _uiShown) return;
         _uiShown = shouldShow;
 
-        rseOnUIInterract.Call(shouldShow);
+        _onUIInterract.Call(shouldShow);
     }
 }

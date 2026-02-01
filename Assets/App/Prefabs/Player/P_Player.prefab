@@ -134,9 +134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coneAngle: 60
+  _pitchAngle: 50
   _origin: {fileID: 5940591338507866869}
   _onInteractInput: {fileID: 11400000, guid: 5b7259b7d795a3b4898622239cdfdd8c, type: 2}
-  rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
+  _onUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
 --- !u!135 &491620632111878751
 SphereCollider:
   m_ObjectHideFlags: 0

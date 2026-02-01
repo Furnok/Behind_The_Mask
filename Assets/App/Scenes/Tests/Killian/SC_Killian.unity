@@ -1338,6 +1338,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7448110485880038343, guid: 5dc6c1913f685994cbdef8064e73b448, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9070071876077928678, guid: 5dc6c1913f685994cbdef8064e73b448, type: 3}
       propertyPath: m_Name
       value: P_UIGame

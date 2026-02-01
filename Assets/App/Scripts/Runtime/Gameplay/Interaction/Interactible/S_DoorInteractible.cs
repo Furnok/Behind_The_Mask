@@ -19,7 +19,6 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
     [Header("Outputs")]
     [SerializeField] RSO_PlayerCurrentMaskEquipped _playerCurrentMaskEquipped;
     [SerializeField] private RSE_OnUIError rseOnUIError;
-    [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
 
     public int Priority => _priority;
     public Transform Transform => transform;
@@ -64,8 +63,6 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
         _currentTween = _doorVisuals.transform
             .DOLocalMove(_openLocalPos, _openDuration)
             .SetEase(_ease);
-
-        rseOnUIInterract.Call(false);
     }
 
     public void Close()
