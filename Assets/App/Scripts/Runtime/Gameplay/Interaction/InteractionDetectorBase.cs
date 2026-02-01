@@ -7,17 +7,35 @@ public abstract class InteractionDetectorBase : MonoBehaviour
 
     protected IInteractable _currentTarget;
 
-    protected bool IsInCone(Vector3 originPos, Vector3 forward, Vector3 targetPos, float maxAngle)
+    protected bool IsInConeYawPitch(
+    Vector3 originPos,
+    Vector3 forward,
+    Vector3 targetPos,
+    float yawAngle,
+    float pitchAngle)
     {
-        Vector3 toTarget = targetPos - originPos;
-        toTarget.y = 0f;
+        Vector3 toTarget = (targetPos - originPos);
         if (toTarget.sqrMagnitude < 0.0001f) return true;
 
-        float angle = Vector3.Angle(forward, toTarget.normalized);
-        return angle <= maxAngle * 0.5f;
+        Vector3 fwdXZ = new Vector3(forward.x, 0f, forward.z);
+        Vector3 toXZ = new Vector3(toTarget.x, 0f, toTarget.z);
+
+        if (fwdXZ.sqrMagnitude < 0.0001f || toXZ.sqrMagnitude < 0.0001f)
+            return true;
+
+        float yaw = Vector3.Angle(fwdXZ.normalized, toXZ.normalized);
+        if (yaw > yawAngle * 0.5f) return false;
+
+        float horizDist = toXZ.magnitude;
+        float pitch = Mathf.Atan2(toTarget.y, horizDist) * Mathf.Rad2Deg;
+
+        float forwardPitch = Mathf.Atan2(forward.y, fwdXZ.magnitude) * Mathf.Rad2Deg;
+
+        float deltaPitch = Mathf.Abs(pitch - forwardPitch);
+        return deltaPitch <= pitchAngle * 0.5f;
     }
 
-    protected void RecalculateTarget(Vector3 originPosition, Vector3 originForward, float coneAngle)
+    protected void RecalculateTarget(Vector3 originPosition, Vector3 originForward, float coneAngle, float pitchAngle)
     {
         _currentTarget = null;
         float bestScore = float.NegativeInfinity;
@@ -29,7 +47,11 @@ public abstract class InteractionDetectorBase : MonoBehaviour
 
             Vector3 targetPos = i.Transform.position;
 
-            if (!IsInCone(originPosition, originForward, targetPos, coneAngle))
+            var col = i.Transform.GetComponent<Collider>();
+            if (col != null)
+                targetPos = col.bounds.center;
+
+            if (!IsInConeYawPitch(originPosition, originForward, targetPos, coneAngle, pitchAngle))
                 continue;
 
             float distance = Vector3.Distance(originPosition, targetPos);

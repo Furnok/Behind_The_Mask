@@ -4,6 +4,7 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
 {
     [Header("Settings")]
     [SerializeField] float _coneAngle = 60f;
+    [SerializeField] float _pitchAngle = 50f;
 
     [Header("References")]
     [SerializeField] Transform _origin;
@@ -33,7 +34,7 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
     void OnInteract()
     {
         var o = _origin != null ? _origin : transform;
-        RecalculateTarget(o.position, o.forward, _coneAngle);
+        RecalculateTarget(o.position, o.forward, _coneAngle, _pitchAngle);
 
         InteractCurrent();
     }
@@ -60,7 +61,7 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
     void RefreshUI()
     {
         var o = _origin != null ? _origin : transform;
-        RecalculateTarget(o.position, o.forward, _coneAngle);
+        RecalculateTarget(o.position, o.forward, _coneAngle, _pitchAngle);
 
         bool shouldShow = _currentTarget != null;
 

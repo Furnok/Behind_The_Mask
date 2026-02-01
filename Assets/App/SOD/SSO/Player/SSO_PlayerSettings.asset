@@ -19,8 +19,8 @@ MonoBehaviour:
     StaminaDrainRate: 5
     StaminaRecoveryRate: 5
     StaminaRecoveryDelay: 1
-    MaxPitchAngle: 60
-    MinPitchAngle: -60
+    MaxPitchAngle: 45
+    MinPitchAngle: -45
     Sensitivity: 1
     NormalFOV: 60
     SprintFOV: 75
