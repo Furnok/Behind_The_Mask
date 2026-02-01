@@ -11,7 +11,6 @@ public class S_InputsManager : MonoBehaviour
     [TabGroup("Inputs")]
     [SerializeField] RSE_OnPlayerGettingCatch _onPlayerGettingCatch;
 
-
     [TabGroup("Outputs")]
     [SerializeField] private RSE_OnMoveInput rseOnMoveInput;
 
@@ -43,9 +42,11 @@ public class S_InputsManager : MonoBehaviour
     [SerializeField] private RSE_OnBookInput rseOnBookInput;
 
     private IA_PlayerInput iaPlayerInput = null;
+    private bool inputInitialized = false;
 
     private void Awake()
     {
+        inputInitialized = false;
         iaPlayerInput = new IA_PlayerInput();
         playerInput.actions = iaPlayerInput.asset;
     }
@@ -106,58 +107,96 @@ public class S_InputsManager : MonoBehaviour
         _onPlayerGettingCatch.action -= DesactivatePlayerInput;
     }
 
+    private void Start()
+    {
+        StartCoroutine(S_Utils.DelayRealTime(0.6f, () => inputInitialized = true));
+    }
+
     void DesactivatePlayerInput(Transform transform)
     {
-        iaPlayerInput.Player.Disable();
+        if (inputInitialized)
+        {
+            iaPlayerInput.Player.Disable();
+        }   
     }
 
     private void OnMoveChanged(InputAction.CallbackContext ctx)
     {
-        rseOnMoveInput.Call(ctx.ReadValue<Vector2>());
+        if (inputInitialized)
+        {
+            rseOnMoveInput.Call(ctx.ReadValue<Vector2>());
+        }
     }
 
     private void OnLookChanged(InputAction.CallbackContext ctx)
     {
-        rseOnLookInput.Call(ctx.ReadValue<Vector2>());
+        if (inputInitialized)
+        {
+            rseOnLookInput.Call(ctx.ReadValue<Vector2>());
+        }
     }
 
     private void OnInteractChanged(InputAction.CallbackContext ctx)
     {
-        rseOnInteractInput.Call();
+        if (inputInitialized)
+        {
+            rseOnInteractInput.Call();
+        }
     }
 
     private void OnMask1Changed(InputAction.CallbackContext ctx)
     {
-        rseOnMask1Input.Call();
+        if (inputInitialized)
+        {
+            rseOnMask1Input.Call();
+        }
     }
 
     private void OnMask2Changed(InputAction.CallbackContext ctx)
     {
-        rseOnMask2Input.Call();
+        if (inputInitialized)
+        {
+            rseOnMask2Input.Call();
+        }
     }
 
     private void OnMask3Changed(InputAction.CallbackContext ctx)
     {
-        rseOnMask3Input.Call();
+        if (inputInitialized)
+        {
+            rseOnMask3Input.Call();
+        }
     }
 
     private void OnEscapeChanged(InputAction.CallbackContext ctx)
     {
-        rseOnEscapeInput.Call();
+        if (inputInitialized)
+        {
+            rseOnEscapeInput.Call();
+        }
     }
 
     private void OnSprintChanged(InputAction.CallbackContext ctx)
     {
-        rseOnSprintInput.Call();
+        if (inputInitialized)
+        {
+            rseOnSprintInput.Call();
+        }
     }
 
     private void OnSprintCancelChanged(InputAction.CallbackContext ctx)
     {
-        rseOnSprintCancelInput.Call();
+        if (inputInitialized)
+        {
+            rseOnSprintCancelInput.Call();
+        }
     }
 
     private void OnBookChanged(InputAction.CallbackContext ctx)
     {
-        rseOnBookInput.Call();
+        if (inputInitialized)
+        {
+            rseOnBookInput.Call();
+        }
     }
 }
