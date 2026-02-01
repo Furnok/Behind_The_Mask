@@ -160,9 +160,21 @@ MonoBehaviour:
   _openOffset: {x: 2, y: 0, z: 0}
   _openDuration: 0.5
   _ease: 9
+  audioDoor:
+    clip: {fileID: 8300000, guid: 6a8ab5fe5dba9cb46bf109ccc5e4f59b, type: 3}
+    mixerGroup: {fileID: -6525697756178178128, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
+    canPause: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   _doorVisuals: {fileID: 4959285282971737744}
   _playerCurrentMaskEquipped: {fileID: 11400000, guid: 8294228d4caf6864e82b8769fc045881, type: 2}
   rseOnUIError: {fileID: 11400000, guid: 3df7eb861fac667478af979178cbad2b, type: 2}
+  rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
 --- !u!65 &2803194466658797573
 BoxCollider:

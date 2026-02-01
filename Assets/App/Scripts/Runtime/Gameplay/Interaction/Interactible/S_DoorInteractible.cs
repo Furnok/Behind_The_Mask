@@ -10,6 +10,7 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
     [SerializeField] Vector3 _openOffset = new Vector3(2f, 0f, 0f);
     [SerializeField] float _openDuration = 0.5f;
     [SerializeField] Ease _ease = Ease.OutCubic;
+    [SerializeField] private S_ClassAudio audioDoor;
 
     [Header("References")]
     [SerializeField] GameObject _doorVisuals;
@@ -19,6 +20,8 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
     [Header("Outputs")]
     [SerializeField] RSO_PlayerCurrentMaskEquipped _playerCurrentMaskEquipped;
     [SerializeField] private RSE_OnUIError rseOnUIError;
+    [SerializeField] private RSE_PlayAudio rsePlayAudio;
+    [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
 
     public int Priority => _priority;
     public Transform Transform => transform;
@@ -58,11 +61,15 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
         if (_isOpen) return;
 
         _isOpen = true;
+        _isInteractable = false;
+        rsePlayAudio.Call(audioDoor);
         KillTween();
 
         _currentTween = _doorVisuals.transform
             .DOLocalMove(_openLocalPos, _openDuration)
             .SetEase(_ease);
+
+        rseOnUIInterract.Call(false);
     }
 
     public void Close()
@@ -70,6 +77,8 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
         if (!_isOpen) return;
 
         _isOpen = false;
+        _isInteractable = true;
+        rsePlayAudio.Call(audioDoor);
         KillTween();
 
         _currentTween = _doorVisuals.transform
