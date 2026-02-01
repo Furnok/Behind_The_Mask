@@ -152,7 +152,7 @@ public class S_UIGameManager : MonoBehaviour
 
     private void DisplayBook()
     {
-        if (!menuWindow.activeInHierarchy)
+        if (!menuWindow.activeInHierarchy && !bookWindow.activeInHierarchy)
         {
             OpenWindow(bookWindow);
         }

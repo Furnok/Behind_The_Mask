@@ -8,10 +8,6 @@ public class S_UICredits : MonoBehaviour
     [Title("Audio")]
     [SerializeField] private S_ClassAudio audioWindow;
 
-    [TabGroup("References")]
-    [Title("Default")]
-    [SerializeField] private GameObject defaultWindow;
-
     [TabGroup("Inputs")]
     [SerializeField] private RSE_OnEscapeInput rseOnEscapeInput;
 
@@ -67,11 +63,7 @@ public class S_UICredits : MonoBehaviour
 
             rsePlayAudio.Call(audioWindow);
 
-            if (rsoNavigation.Value.selectablePressOldWindow == null)
-            {
-                rsoNavigation.Value.selectableFocus = null;
-                defaultWindow.SetActive(true);
-            }
+            if (rsoNavigation.Value.selectablePressOldWindow == null) rsoNavigation.Value.selectableFocus = null;
             else
             {
                 rsoNavigation.Value.selectablePressOldWindow?.Select();
