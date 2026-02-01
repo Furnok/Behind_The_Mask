@@ -33,6 +33,14 @@ public class S_GameManager : MonoBehaviour
     [TabGroup("Outputs")]
     [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
+    [TabGroup("Outputs")]
+    [SerializeField] private RSO_SettingsSaved rsoSettingsSaved;
+
+    private void OnDisable()
+    {
+        rsoSettingsSaved.Value = new();
+    }
+
     private void Start()
     {
         if (isMainMenu)

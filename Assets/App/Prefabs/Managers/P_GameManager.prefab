@@ -72,3 +72,4 @@ MonoBehaviour:
   rseOnMenu: {fileID: 11400000, guid: e56b4202ad366f0439455c67d75d6e95, type: 2}
   rseOnGame: {fileID: 11400000, guid: d686c7676d86e514ea906a2b23d4e0ac, type: 2}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
+  rsoSettingsSaved: {fileID: 11400000, guid: 1f2274f4d01e21a4290a9e6b3103cdb6, type: 2}

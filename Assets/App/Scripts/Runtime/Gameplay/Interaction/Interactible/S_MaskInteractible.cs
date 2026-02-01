@@ -8,6 +8,7 @@ public class S_MaskInteractible : MonoBehaviour, IInteractable
     [SerializeField] bool _isInteractable = true;
     [SerializeField] Mask _maskType;
     [SerializeField] SphereCollider colliderMask;
+    [SerializeField] private S_ClassAudio audioPickUp;
 
     [Header("References")]
     [SerializeField] GameObject _maskVisuals;
@@ -18,6 +19,7 @@ public class S_MaskInteractible : MonoBehaviour, IInteractable
     [SerializeField] RSE_OnPickUpMask _onPickUpMask;
     [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
     [SerializeField] private RSE_OnUIError rseOnUIError;
+    [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
     public int Priority => _priority;
     public Transform Transform => transform;
@@ -34,6 +36,7 @@ public class S_MaskInteractible : MonoBehaviour, IInteractable
             colliderMask.enabled = false;
             rseOnUIInterract.Call(false);
             rseOnUIError.Call("You picked up the Mask " + index.ToString() + "!", Color.green);
+            rsePlayAudio.Call(audioPickUp);
         }
     }
 }

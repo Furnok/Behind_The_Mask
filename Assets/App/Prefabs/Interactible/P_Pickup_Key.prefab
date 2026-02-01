@@ -48,11 +48,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _priority: 0
   _isInteractable: 1
+  audioPickUp:
+    clip: {fileID: 8300000, guid: 531aab73b360872449dda5d72f32440a, type: 3}
+    mixerGroup: {fileID: -6525697756178178128, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
+    canPause: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   _keyVisuals: {fileID: 7908326332913090553}
   colliderkey: {fileID: 7814052791176620737}
   _haveKey: {fileID: 11400000, guid: 40caf487fba95204bbe2d41c42776d52, type: 2}
   rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
   rseOnUIError: {fileID: 11400000, guid: 3df7eb861fac667478af979178cbad2b, type: 2}
+  rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
 --- !u!135 &7814052791176620737
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -72,8 +84,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!1 &7627151549690996249
 GameObject:
   m_ObjectHideFlags: 0

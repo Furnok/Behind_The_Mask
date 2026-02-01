@@ -83,10 +83,22 @@ MonoBehaviour:
   _isInteractable: 1
   _maskType: 4
   colliderMask: {fileID: 2586656023060981872}
+  audioPickUp:
+    clip: {fileID: 8300000, guid: 531aab73b360872449dda5d72f32440a, type: 3}
+    mixerGroup: {fileID: -6525697756178178128, guid: ae8ed351aee990f42a24eab6c6cd65d0, type: 2}
+    fade: 0
+    loop: 0
+    canPause: 1
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    is3D: 0
+    minDistance: 0
+    maxDistance: 500
   _maskVisuals: {fileID: 485730878468407589}
   _onPickUpMask: {fileID: 11400000, guid: 8416929ac1dc3e944acd0a0c2c62507c, type: 2}
   rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
   rseOnUIError: {fileID: 11400000, guid: 3df7eb861fac667478af979178cbad2b, type: 2}
+  rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
 --- !u!135 &2586656023060981872
 SphereCollider:
   m_ObjectHideFlags: 0

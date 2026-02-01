@@ -6,6 +6,7 @@ public class S_KeyInteractible : MonoBehaviour, IInteractable
     [Header("Settings")]
     [SerializeField] int _priority = 0;
     [SerializeField] bool _isInteractable = true;
+    [SerializeField] private S_ClassAudio audioPickUp;
 
     [Header("References")]
     [SerializeField] GameObject _keyVisuals;
@@ -17,6 +18,7 @@ public class S_KeyInteractible : MonoBehaviour, IInteractable
     [SerializeField] RSO_HaveKey _haveKey;
     [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
     [SerializeField] private RSE_OnUIError rseOnUIError;
+    [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
     public int Priority => _priority;
     public Transform Transform => transform;
@@ -39,5 +41,6 @@ public class S_KeyInteractible : MonoBehaviour, IInteractable
 
         rseOnUIInterract.Call(false);
         rseOnUIError.Call("You picked up the Key!", Color.green);
+        rsePlayAudio.Call(audioPickUp);
     }
 }

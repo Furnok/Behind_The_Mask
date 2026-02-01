@@ -81,13 +81,18 @@ public class S_UIMenu : MonoBehaviour
 
     private void CloseEscape()
     {
-        if (rsoCurrentWindows.Value.Count > 0 && rsoCurrentWindows.Value[^1] == gameObject) ResumeGame();
+        if (rsoCurrentWindows.Value.Count > 0 && rsoCurrentWindows.Value[^1] == gameObject)
+        {
+            ResumeGame();
+        }
     }
 
     public void ResumeGame()
     {
         if (!isTransit)
         {
+            rsePlayAudio.Call(audioWindow);
+
             rseOnHideMouseCursor.Call();
 
             rseOnCloseAllWindows.Call();
