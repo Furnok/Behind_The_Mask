@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class S_PlayerInteractionDetector : InteractionDetectorBase
 {
-    //[Header("Settings")]
+    [Header("Settings")]
+    [SerializeField] float _coneAngle = 60f;
 
-    //[Header("References")]
+    [Header("References")]
+    [SerializeField] Transform _origin;
 
     [Header("Inputs")]
     [SerializeField] RSE_OnInteractInput _onInteractInput;
@@ -13,6 +15,8 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
     [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
 
     //[Header("Outputs")]
+
+    bool _uiShown = false;
 
     private void OnEnable()
     {
@@ -28,7 +32,9 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
 
     void OnInteract()
     {
-        RecalculateTarget(transform.position);
+        var o = _origin != null ? _origin : transform;
+        RecalculateTarget(o.position, o.forward, _coneAngle);
+
         InteractCurrent();
     }
 
@@ -48,6 +54,19 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
 
     private void Update()
     {
-        RecalculateTarget(transform.position);
+        RefreshUI();
+    }
+
+    void RefreshUI()
+    {
+        var o = _origin != null ? _origin : transform;
+        RecalculateTarget(o.position, o.forward, _coneAngle);
+
+        bool shouldShow = _currentTarget != null;
+
+        if (shouldShow == _uiShown) return;
+        _uiShown = shouldShow;
+
+        rseOnUIInterract.Call(shouldShow);
     }
 }
