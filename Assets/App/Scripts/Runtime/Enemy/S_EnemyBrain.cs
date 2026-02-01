@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +13,7 @@ public class S_EnemyBrain : MonoBehaviour
     [SerializeField] NavMeshAgent _navMeshAgent;
     [SerializeField] Animator _animator;
     [SerializeField] Transform _headTransform;
+    [SerializeField] TextMeshPro _stateText;
 
     [Header("Outputs")]
     [SerializeField] RSO_PlayerCurrentMaskEquipped _currentMask;
@@ -35,6 +37,8 @@ public class S_EnemyBrain : MonoBehaviour
 
     private void OnEnable()
     {
+        _stateText.text = "";
+
         _state = EState.Walk;
         _delayTimer = 0f;
         _lostTimer = 0f;
@@ -215,6 +219,7 @@ public class S_EnemyBrain : MonoBehaviour
                 _motor.SetSpeedWalk();
 
                 PlayAnimation(IsWalkingHash);
+                _stateText.text = "";
 
                 if (_motor.HasReachedDestination(0.35f))
                 {
@@ -228,6 +233,8 @@ public class S_EnemyBrain : MonoBehaviour
                 _motor.LookAt(_perception.PlayerPosition);
 
                 PlayAnimation(IsObservingHash);
+                _stateText.text = "<color=Yellow>??</color>";
+
 
                 _delayTimer = 0f;
                 break;
@@ -248,11 +255,13 @@ public class S_EnemyBrain : MonoBehaviour
                         _onPlayerGettingCatch.Call(_headTransform);
 
                         _animator.SetBool(IsCatchingHash, true);
+                        _stateText.text = "";
 
                         Debug.Log("Player Caught by Enemy");
                     }
                     else
                     {
+                        _stateText.text = "<color=Red>!</color>";
                         PlayAnimation(IsChasingHash);
                     }
                 }
@@ -263,6 +272,8 @@ public class S_EnemyBrain : MonoBehaviour
             case EState.RunAway:
 
                 PlayAnimation(IsChasingHash);
+                _stateText.text = "<color=Yellow>!!</color>";
+
                 _motor.SetSpeedRunAway();
                 _motor.FleeFrom(_perception.PlayerPosition);
                 _delayTimer = 0f;
