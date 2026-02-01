@@ -18,6 +18,7 @@ public class S_DoorInteractible_Key : MonoBehaviour, IInteractable
     [Header("Outputs")]
     [SerializeField] RSO_HaveKey _haveKey;
     [SerializeField] private RSE_OnUIError rseOnUIError;
+    [SerializeField] private RSE_OnUIInterract rseOnUIInterract;
 
     public int Priority => _priority;
     public Transform Transform => transform;
@@ -61,6 +62,8 @@ public class S_DoorInteractible_Key : MonoBehaviour, IInteractable
         _currentTween = _doorVisuals.transform
             .DOLocalMove(_openLocalPos, _openDuration)
             .SetEase(_ease);
+
+        rseOnUIInterract.Call(false);
     }
 
     public void Close()
@@ -83,7 +86,7 @@ public class S_DoorInteractible_Key : MonoBehaviour, IInteractable
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Detect"))
         {
             Close();
         }

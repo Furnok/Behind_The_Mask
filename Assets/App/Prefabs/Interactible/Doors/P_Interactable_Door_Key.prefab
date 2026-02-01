@@ -65,6 +65,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2355787208678203438}
   m_SourcePrefab: {fileID: 100100000, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
+--- !u!65 &2517429821257668430 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2803194466658797573, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
+  m_PrefabInstance: {fileID: 290842361964011339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2943830485704292137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3230155897067972706, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
@@ -88,8 +93,10 @@ MonoBehaviour:
   _openDuration: 0.5
   _ease: 9
   _doorVisuals: {fileID: 4673518318237925851}
+  boxCollider: {fileID: 2517429821257668430}
   _haveKey: {fileID: 11400000, guid: 40caf487fba95204bbe2d41c42776d52, type: 2}
   rseOnUIError: {fileID: 11400000, guid: 3df7eb861fac667478af979178cbad2b, type: 2}
+  rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
 --- !u!1 &4673518318237925851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4959285282971737744, guid: cac0661d723da794fa4bdac411fa3882, type: 3}

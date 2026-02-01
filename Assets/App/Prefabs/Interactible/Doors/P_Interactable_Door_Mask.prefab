@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1297793995179162495}
   - component: {fileID: 3034654405977160368}
   - component: {fileID: 1969345521863825223}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,8 +161,10 @@ MonoBehaviour:
   _openDuration: 0.5
   _ease: 9
   _doorVisuals: {fileID: 4959285282971737744}
+  boxCollider: {fileID: 2803194466658797573}
   _playerCurrentMaskEquipped: {fileID: 11400000, guid: 8294228d4caf6864e82b8769fc045881, type: 2}
   rseOnUIError: {fileID: 11400000, guid: 3df7eb861fac667478af979178cbad2b, type: 2}
+  rseOnUIInterract: {fileID: 11400000, guid: 409c4a037c834d24bb338d477a399e12, type: 2}
 --- !u!65 &2803194466658797573
 BoxCollider:
   m_ObjectHideFlags: 0

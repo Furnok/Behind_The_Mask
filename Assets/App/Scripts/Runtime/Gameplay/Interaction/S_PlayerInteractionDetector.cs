@@ -41,8 +41,6 @@ public class S_PlayerInteractionDetector : InteractionDetectorBase
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("t");
-
         TryRemoveInteractableFromCollider(other);
 
         rseOnUIInterract.Call(false);
