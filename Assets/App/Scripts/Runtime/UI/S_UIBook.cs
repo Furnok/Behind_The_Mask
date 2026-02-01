@@ -39,8 +39,6 @@ public class S_UIBook : MonoBehaviour
         rseOnEscapeInput.action += CloseEscape;
         rseOnBookInput.action += CloseEscape;
 
-        if (Gamepad.current == null) rseOnShowMouseCursor.Call();
-
         isClosing = false;
 
         rsePlayAudio.Call(audioWindow);
