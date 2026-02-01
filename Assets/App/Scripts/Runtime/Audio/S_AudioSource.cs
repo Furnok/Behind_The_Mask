@@ -9,15 +9,20 @@ public class S_AudioSource : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
 
     [HideInInspector] public bool canPause = true;
+    [HideInInspector] public bool islooping = false;
 
     private S_AudioManager currentAudioManager = null;
 
-    public void Setup(S_AudioManager audioManager, bool value)
+    public void Setup(S_AudioManager audioManager, bool value, bool value2)
     {
         currentAudioManager = audioManager;
         canPause = value;
+        islooping = value2;
 
-        StartCoroutine(S_Utils.DelayFrame(() => StartCoroutine(AutoDestroyAfterAudio())));
+        if (!islooping)
+        {
+            StartCoroutine(S_Utils.DelayFrame(() => StartCoroutine(AutoDestroyAfterAudio())));
+        }
     }
 
     private IEnumerator AutoDestroyAfterAudio()

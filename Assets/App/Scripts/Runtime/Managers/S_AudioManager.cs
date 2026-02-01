@@ -63,7 +63,7 @@ public class S_AudioManager : MonoBehaviour
         audioSource.maxDistance = classAudio.maxDistance;
 
         S_AudioSource script = audioObj.GetComponent<S_AudioSource>();
-        script.Setup(this, classAudio.canPause);
+        script.Setup(this, classAudio.canPause, classAudio.loop);
 
         if (classAudio.fade)
         {

@@ -12,11 +12,8 @@ public class S_UIGameManager : MonoBehaviour
     [SerializeField] private CanvasGroup gameCanvasGroup;
 
     [TabGroup("References")]
-    [Title("Game Window")]
+    [Title("Book Window")]
     [SerializeField] private GameObject bookWindow;
-
-    [TabGroup("References")]
-    [SerializeField] private CanvasGroup bookCanvasGroup;
 
     [TabGroup("References")]
     [Title("Main Menu Window")]
@@ -60,6 +57,9 @@ public class S_UIGameManager : MonoBehaviour
     [SerializeField] private RSE_OnGamePause rseOnGamePause;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnBookInput rseOnBookInput;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSO_CurrentWindows rsoCurrentWindows;
 
     [TabGroup("Outputs")]
@@ -81,6 +81,7 @@ public class S_UIGameManager : MonoBehaviour
         rseOnFadeIn.action += FadeIn;
         rseOnFadeOut.action += FadeOut;
         rseOnEscapeInput.action += PauseGame;
+        rseOnBookInput.action += DisplayBook;
 
         rsoCurrentWindows.Value = new();
     }
@@ -95,6 +96,7 @@ public class S_UIGameManager : MonoBehaviour
         rseOnFadeIn.action -= FadeIn;
         rseOnFadeOut.action -= FadeOut;
         rseOnEscapeInput.action -= PauseGame;
+        rseOnBookInput.action -= DisplayBook;
 
         fadeTween?.Kill();
 
@@ -150,7 +152,10 @@ public class S_UIGameManager : MonoBehaviour
 
     private void DisplayBook()
     {
-
+        if (!menuWindow.activeInHierarchy)
+        {
+            OpenWindow(bookWindow);
+        }
     }
 
     private void AlreadyOpen(GameObject window)

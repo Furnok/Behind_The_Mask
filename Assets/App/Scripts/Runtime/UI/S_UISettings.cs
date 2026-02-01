@@ -66,7 +66,7 @@ public class S_UISettings : MonoBehaviour
     {
         if (uiElement.interactable)
         {
-            GameObject blocker = transform.root.Find("Blocker")?.gameObject;
+            GameObject blocker = GameObject.Find("Blocker");
             if (blocker != null)
             {
                 Button button = blocker.GetComponent<Button>();
@@ -84,6 +84,8 @@ public class S_UISettings : MonoBehaviour
     {
         if (dropDownResolutions?.GetComponent<TMP_Dropdown>()?.IsExpanded == true)
         {
+            rsePlayAudio.Call(audioClick);
+
             return;
         }
 

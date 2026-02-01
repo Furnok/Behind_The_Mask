@@ -85,3 +85,4 @@ MonoBehaviour:
   rseOnEscapeInput: {fileID: 11400000, guid: 59753f43be0f3f64381174235d4e6bea, type: 2}
   rseOnSprintInput: {fileID: 11400000, guid: f35e62adb7d351f41bb1b6365a0e9c2f, type: 2}
   rseOnSprintCancelInput: {fileID: 11400000, guid: cd946a8c8170be449a09e392d720f3cc, type: 2}
+  rseOnBookInput: {fileID: 11400000, guid: 21889b2cb2b812c419eb150cdecad408, type: 2}

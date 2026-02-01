@@ -1820,6 +1820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3972333541388899668}
   - component: {fileID: 1322528985694981359}
+  - component: {fileID: 3137113501851388644}
   m_Layer: 0
   m_Name: ContentBook
   m_TagString: Untagged
@@ -1858,6 +1859,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &3137113501851388644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2248576282668163520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293376250e4f9db4098764843cb8c2c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2266844330574051553
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,7 +3794,6 @@ MonoBehaviour:
   gameWindow: {fileID: 8514009375313026981}
   gameCanvasGroup: {fileID: 3161436643950571725}
   bookWindow: {fileID: 2248576282668163520}
-  bookCanvasGroup: {fileID: 1322528985694981359}
   menuWindow: {fileID: 8020607945730795145}
   menuCanvasGroup: {fileID: 2777348813744507825}
   fadeWindow: {fileID: 4573565003498163268}
@@ -3795,6 +3807,7 @@ MonoBehaviour:
   rseOnFadeOut: {fileID: 11400000, guid: bc8e79bbd9547214c9132a9ff5afe288, type: 2}
   rseOnEscapeInput: {fileID: 11400000, guid: 59753f43be0f3f64381174235d4e6bea, type: 2}
   rseOnGamePause: {fileID: 11400000, guid: 0227ae7847beac54396feb1b837a19a8, type: 2}
+  rseOnBookInput: {fileID: 11400000, guid: 21889b2cb2b812c419eb150cdecad408, type: 2}
   rsoCurrentWindows: {fileID: 11400000, guid: 1c6f9f6f22c008c47ab3343fb3dc201a, type: 2}
   ssoFadeTime: {fileID: 11400000, guid: 5aebcac51f5a6a043831b996e7962130, type: 2}
   ssoDisplayWindowTime: {fileID: 11400000, guid: 43e34502203d588499c46defb3523cd8, type: 2}
@@ -5502,7 +5515,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3d91209dc6a76434aa15433a04689683, type: 3}
   - {fileID: 21300000, guid: 538bfc778db139f46aa84c4b006e0d55, type: 3}
   imagesXbox:
-  - {fileID: 21300000, guid: c4ca2143141973a4f90ea263d1db64ac, type: 3}
+  - {fileID: 21300000, guid: 47342a0c5ac0b7843b146ea94377f3e2, type: 3}
   - {fileID: 21300000, guid: d114730f00e13224a9204af8e0ae9197, type: 3}
   - {fileID: 21300000, guid: dd351d34d062d0245931455186b26bc6, type: 3}
   - {fileID: 21300000, guid: c1a0eae6fc88f0a48b388efc8f056989, type: 3}
@@ -5912,6 +5925,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4747844069781179125}
     m_Modifications:
+    - target: {fileID: 2612615750333971533, guid: 6bb37d80823a9244f9f5bdda5fdf087f, type: 3}
+      propertyPath: audioClick.canPause
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2809353659322838161, guid: 6bb37d80823a9244f9f5bdda5fdf087f, type: 3}
       propertyPath: m_Name
       value: P_Settings
@@ -5994,6 +6011,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3167767443743667904, guid: 6bb37d80823a9244f9f5bdda5fdf087f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163442167925127938, guid: 6bb37d80823a9244f9f5bdda5fdf087f, type: 3}
+      propertyPath: audioClick.canPause
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655507306220743213, guid: 6bb37d80823a9244f9f5bdda5fdf087f, type: 3}
+      propertyPath: audioClick.canPause
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178096427294324962, guid: 6bb37d80823a9244f9f5bdda5fdf087f, type: 3}
+      propertyPath: audioClick.canPause
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

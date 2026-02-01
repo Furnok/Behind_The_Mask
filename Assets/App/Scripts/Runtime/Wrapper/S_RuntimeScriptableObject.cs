@@ -11,8 +11,6 @@ namespace BT.ScriptablesObject
 
         [SerializeField] private T _value = default;
 
-        [HideInInspector, NonSerialized] private T _initialValue = default;
-
         public T Value
         {
             get => _value;
@@ -24,38 +22,10 @@ namespace BT.ScriptablesObject
             }
         }
 
-        #if UNITY_EDITOR
-        private void OnValidate()
-        {
-            if (!Application.isPlaying) _initialValue = _value;
-        }
-
-        private void OnEnable()
-        {
-            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
-        }
-
-        private void OnDisable()
-        {
-            EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
-        }
-
-        private void OnPlayModeStateChanged(PlayModeStateChange state)
-        {
-            if (state == PlayModeStateChange.ExitingPlayMode) ResetValue();
-        }
-
-        private void ResetValue()
-        {
-            onValueChanged = null;
-            _value = _initialValue;
-        }
-
         [Button("Call Event")]
         private void InvokeOnValueChanged()
         {
             onValueChanged?.Invoke(_value);
         }
-        #endif
     }
 }

@@ -733,7 +733,7 @@ MonoBehaviour:
           m_MethodName: Unselected
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgument: {fileID: 4910950932137782087}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -749,7 +749,7 @@ MonoBehaviour:
           m_MethodName: PlayAudio
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgument: {fileID: 4910950932137782087}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -5349,6 +5349,22 @@ MonoBehaviour:
         - m_Target: {fileID: 5592966885644776238}
           m_TargetAssemblyTypeName: S_UISelectable, Assembly-CSharp
           m_MethodName: Unselected
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2946010814169922342}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5592966885644776238}
+          m_TargetAssemblyTypeName: S_UISelectable, Assembly-CSharp
+          m_MethodName: PlayAudio
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 2946010814169922342}
