@@ -57,6 +57,7 @@ public class S_EnemyBrain : MonoBehaviour
         {
             PlayAnimation(IsIdleHash);
         }
+
     }
 
     private void Update()
@@ -224,6 +225,12 @@ public class S_EnemyBrain : MonoBehaviour
                 _motor.SetSpeedWalk();
 
                 PlayAnimation(IsWalkingHash);
+
+                if (_patrol.HasPoints == false)
+                {
+                    _motor.Stop();
+                    PlayAnimation(IsIdleHash);
+                }
                 _stateText.text = "";
 
                 if (_motor.HasReachedDestination(0.35f))
