@@ -3503,6 +3503,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1e52ec7ecefbd4cb61c48ee104498b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _masksFrontCam:
+    keys: 020000000400000008000000
+    values:
+    - {fileID: 7364982756640390788}
+    - {fileID: 3894694979915616491}
+    - {fileID: 3460654596661229331}
   _onPickUpMask: {fileID: 11400000, guid: 8416929ac1dc3e944acd0a0c2c62507c, type: 2}
   _onMask1Input: {fileID: 11400000, guid: 41c3301eda5dd9247a92d300842d687d, type: 2}
   _onMask2Input: {fileID: 11400000, guid: 43f11f637904fe043a1db3bcbd258eab, type: 2}

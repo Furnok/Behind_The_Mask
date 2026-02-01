@@ -5,7 +5,8 @@ public class S_PlayerMask : MonoBehaviour
 {
     //[Header("Settings")]
 
-    //[Header("References")]
+    [Header("References")]
+    [SerializeField] S_SerializableDictionary<Mask, GameObject> _masksFrontCam;
 
     [Header("Inputs")]
     [SerializeField] RSE_OnPickUpMask _onPickUpMask;
@@ -108,12 +109,28 @@ public class S_PlayerMask : MonoBehaviour
         if (_playerCurrentMaskEquipped.Value == mask)
         {
             _playerCurrentMaskEquipped.Value = Mask.None;
+
+            UpdateMaskVisuals(Mask.None);
         }
         else
         {
             _playerCurrentMaskEquipped.Value = mask;
+            UpdateMaskVisuals(mask);
         }
 
         rseOnEquippedMaskUI.Call(index);
+    }
+
+    void UpdateMaskVisuals(Mask mask)
+    {
+        foreach (var kvp in _masksFrontCam)
+        {
+            kvp.Value.SetActive(false);
+        }
+
+        if (mask != Mask.None)
+        {
+            _masksFrontCam[mask].SetActive(true);
+        }
     }
 }
