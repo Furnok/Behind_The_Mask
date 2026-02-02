@@ -43,10 +43,6 @@ public class S_DoorInteractible : MonoBehaviour, IInteractable
     {
         if(_playerCurrentMaskEquipped.Value == _requiredMask)
         {
-            // Logic to open the door and animation
-            Debug.Log("Door opened with mask: " + _requiredMask.ToString());
-            //_doorVisuals.SetActive(false); // Simulate door opening by disabling visuals for now
-
             Open();
 
         }

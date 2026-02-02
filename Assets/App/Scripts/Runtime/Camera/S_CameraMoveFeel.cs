@@ -13,7 +13,6 @@ public class S_CameraMoveFeel : MonoBehaviour
     [SerializeField] float _sprintFrequency = 2.6f;
 
     [SerializeField] float _returnSpeed = 10f;
-    [SerializeField] float _moveThreshold = 0.1f;
 
     [Header("References")]
     [SerializeField] Transform _cameraRig;

@@ -52,7 +52,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 5, z: 10}
+  m_Size: {x: 6, y: 5, z: 20}
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!114 &7813078921043559892
 MonoBehaviour:
@@ -66,4 +66,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2076f3f18f3cac4389c125794b665af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemies: []
+  _enemies:
+  - {fileID: 0}

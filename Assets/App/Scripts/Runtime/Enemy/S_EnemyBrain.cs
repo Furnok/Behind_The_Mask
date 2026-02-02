@@ -92,9 +92,6 @@ public class S_EnemyBrain : MonoBehaviour
         }
 
         TickState();
-
-        Debug.Log($"Enemy State: {_state}");
-
     }
 
     void EnemyMaskSolver(bool inCone)

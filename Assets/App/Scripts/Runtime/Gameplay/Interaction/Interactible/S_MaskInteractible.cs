@@ -27,7 +27,6 @@ public class S_MaskInteractible : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log("Picked up mask: " + _maskType.ToString());
         if (_isInteractable == true)
         {
             _onPickUpMask.Call(_maskType);
