@@ -778,7 +778,7 @@ MonoBehaviour:
   _fovOnScream: 35
   _shakeDuration: 0.25
   _shakeStrength: 0.25
-  _delayToCallGameOVer: 7
+  _delayToCallGameOVer: 5
 --- !u!1 &8998856993452211249
 GameObject:
   m_ObjectHideFlags: 0
