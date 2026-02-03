@@ -90,49 +90,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2803194466658797573, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
-      propertyPath: m_Size.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803194466658797573, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
-      propertyPath: m_Size.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803194466658797573, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
-      propertyPath: m_Size.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803194466658797573, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3034654405977160368, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: d2eb4a9679ab4ed4dbf26c07e18bd291, type: 2}
+      objectReference: {fileID: 2100000, guid: 9d191ea5e58bfc14c8dd323e68b1cbd9, type: 2}
     - target: {fileID: 3230155897067972706, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
       propertyPath: m_Name
       value: P_Interactable_Door_Mask_Green Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5059656985847447076, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
-      propertyPath: _openOffset.x
-      value: 2.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059656985847447076, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
       propertyPath: _requiredMask
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7650127068773704382, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7650127068773704382, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7650127068773704382, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7650127068773704382, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
       propertyPath: m_LocalPosition.x
@@ -140,11 +108,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7650127068773704382, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7650127068773704382, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7650127068773704382, guid: cac0661d723da794fa4bdac411fa3882, type: 3}
       propertyPath: m_LocalRotation.w
