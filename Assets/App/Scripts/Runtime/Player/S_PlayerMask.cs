@@ -122,16 +122,16 @@ public class S_PlayerMask : MonoBehaviour
             _playerCurrentMaskEquipped.Value = Mask.None;
 
             UpdateMaskVisuals(Mask.None);
+            rseOnEquippedMaskUI.Call(index);
         }
         else
         {
             if(_coroutineMask == null)
             {
                 _coroutineMask = StartCoroutine(MaskEquippedCoroutine(mask));
+                rseOnEquippedMaskUI.Call(index);
             }
         }
-
-        rseOnEquippedMaskUI.Call(index);
     }
 
     void UpdateMaskVisuals(Mask mask)
