@@ -23,4 +23,8 @@ public struct S_StructPlayerSettings
     public float NormalFOV;
     public float SprintFOV;
     public float SmoothTimeFOV;
+
+    [Header("Masks Settings")]
+    public float MaskDelayToEquipped;
+
 }

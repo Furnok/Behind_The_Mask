@@ -25,3 +25,4 @@ MonoBehaviour:
     NormalFOV: 60
     SprintFOV: 75
     SmoothTimeFOV: 0.15
+    MaskDelayToEquipped: 0.5

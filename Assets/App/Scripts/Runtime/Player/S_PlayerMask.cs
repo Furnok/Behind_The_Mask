@@ -1,4 +1,6 @@
+using DG.Tweening;
 using Sirenix.OdinInspector;
+using System.Collections;
 using UnityEngine;
 
 public class S_PlayerMask : MonoBehaviour
@@ -7,6 +9,10 @@ public class S_PlayerMask : MonoBehaviour
 
     [Header("References")]
     [SerializeField] S_SerializableDictionary<Mask, GameObject> _masksFrontCam;
+    [SerializeField] Transform _maskFinalAnchor;
+    [SerializeField] Transform _maskStartLeftAnchor;
+    [SerializeField] Transform _maskMidAnchor;
+    [SerializeField] float _equipRotateZ = 90f;
 
     [Header("Inputs")]
     [SerializeField] RSE_OnPickUpMask _onPickUpMask;
@@ -19,6 +25,9 @@ public class S_PlayerMask : MonoBehaviour
     [SerializeField] RSO_PlayerCurrentMaskEquipped _playerCurrentMaskEquipped;
     [SerializeField] RSE_OnUpdateUIInventory rseOnUpdateUIInventory;
     [SerializeField] RSE_OnEquippedMaskUI rseOnEquippedMaskUI;
+    [SerializeField] SSO_PlayerSettings _playerSettings;
+
+    Coroutine _coroutineMask;
 
     private void Awake()
     {
@@ -108,14 +117,18 @@ public class S_PlayerMask : MonoBehaviour
 
         if (_playerCurrentMaskEquipped.Value == mask)
         {
+            if (_coroutineMask != null) return;
+
             _playerCurrentMaskEquipped.Value = Mask.None;
 
             UpdateMaskVisuals(Mask.None);
         }
         else
         {
-            _playerCurrentMaskEquipped.Value = mask;
-            UpdateMaskVisuals(mask);
+            if(_coroutineMask == null)
+            {
+                _coroutineMask = StartCoroutine(MaskEquippedCoroutine(mask));
+            }
         }
 
         rseOnEquippedMaskUI.Call(index);
@@ -132,5 +145,47 @@ public class S_PlayerMask : MonoBehaviour
         {
             _masksFrontCam[mask].SetActive(true);
         }
+    }
+
+    IEnumerator MaskEquippedCoroutine(Mask mask)
+    {
+        float duration = _playerSettings.Value.MaskDelayToEquipped;
+
+        PlayEquipAnim(mask, duration);
+
+        yield return new WaitForSeconds(duration);
+
+        _playerCurrentMaskEquipped.Value = mask;
+
+        var go = _masksFrontCam[mask];
+        go.transform.position = _maskFinalAnchor.position;
+        go.transform.rotation = _maskFinalAnchor.rotation;
+
+        _coroutineMask = null;
+    }
+
+    void PlayEquipAnim(Mask mask, float duration)
+    {
+        var go = _masksFrontCam[mask];
+        var t = go.transform;
+
+        foreach (var kvp in _masksFrontCam)
+            kvp.Value.SetActive(kvp.Key == mask);
+
+        t.DOKill();
+
+        t.localPosition = _maskStartLeftAnchor.localPosition;
+        t.localRotation = _maskStartLeftAnchor.localRotation * Quaternion.Euler(0f, _equipRotateZ, 0f);
+
+        Vector3[] path = new Vector3[]
+        {
+        _maskStartLeftAnchor.localPosition,
+        _maskMidAnchor.localPosition,
+        _maskFinalAnchor.localPosition
+        };
+
+        Sequence s = DOTween.Sequence();
+        s.Join(t.DOLocalPath(path, duration, PathType.CatmullRom).SetEase(Ease.OutCubic));
+        s.Join(t.DOLocalRotateQuaternion(_maskFinalAnchor.localRotation, duration).SetEase(Ease.OutCubic));
     }
 }
