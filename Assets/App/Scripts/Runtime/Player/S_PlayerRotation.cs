@@ -14,6 +14,7 @@ public class S_PlayerRotation : MonoBehaviour
     [SerializeField] SSO_PlayerSettings _playerSettings;
 
     Vector2 _lookInput = Vector2.zero;
+    private float _currentYaw;
 
     private void OnEnable()
     {
@@ -30,10 +31,10 @@ public class S_PlayerRotation : MonoBehaviour
         _lookInput = lookInput;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        Vector3 rotation = transform.rotation.eulerAngles;
-        rotation.y += _lookInput.x;
-        transform.rotation = Quaternion.Euler(rotation);
+        _currentYaw += _lookInput.x * _playerSettings.Value.Sensitivity;
+
+        transform.rotation = Quaternion.Euler(0f, _currentYaw, 0f);
     }
 }
