@@ -21,7 +21,7 @@ MonoBehaviour:
     StaminaRecoveryDelay: 1
     MaxPitchAngle: 45
     MinPitchAngle: -45
-    Sensitivity: 1
+    Sensitivity: 0.2
     NormalFOV: 60
     SprintFOV: 75
     SmoothTimeFOV: 0.15
