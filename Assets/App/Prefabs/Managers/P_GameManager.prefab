@@ -72,4 +72,7 @@ MonoBehaviour:
   rseOnMenu: {fileID: 11400000, guid: e56b4202ad366f0439455c67d75d6e95, type: 2}
   rseOnGame: {fileID: 11400000, guid: d686c7676d86e514ea906a2b23d4e0ac, type: 2}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
+  rseOnShowMouseCursor: {fileID: 11400000, guid: 05d1a18ef32d0254882c58dc4049dbb4, type: 2}
+  rseOnHideMouseCursor: {fileID: 11400000, guid: dfd0f540889f6374fa1c8b6d1fd64f5a, type: 2}
+  rseOnNeedCursor: {fileID: 11400000, guid: 2de99363488ebd94d8ab01043cef0a28, type: 2}
   rsoSettingsSaved: {fileID: 11400000, guid: 1f2274f4d01e21a4290a9e6b3103cdb6, type: 2}

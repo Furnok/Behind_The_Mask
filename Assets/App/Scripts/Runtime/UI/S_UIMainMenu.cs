@@ -35,6 +35,9 @@ public class S_UIMainMenu : MonoBehaviour
     [SerializeField] private RSE_OnHideMouseCursor rseOnHideMouseCursor;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnNeedCursor rseOnNeedCursor;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSE_OnLoadScene rseOnLoadScene;
 
     [TabGroup("Outputs")]
@@ -71,6 +74,7 @@ public class S_UIMainMenu : MonoBehaviour
                 rsoNavigation.Value.selectableFocus = null;
 
                 rseOnHideMouseCursor.Call();
+                rseOnNeedCursor.Call(false);
 
                 StartCoroutine(S_Utils.DelayRealTime(0.8f, () => rseOnLoadScene.Call(levelName.Name)));
             }));

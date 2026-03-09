@@ -48,6 +48,7 @@ MonoBehaviour:
   SelectableCursor: {fileID: 2800000, guid: f2c11995b89357544be03cdf98d7eccb, type: 3}
   rseOnShowMouseCursor: {fileID: 11400000, guid: 05d1a18ef32d0254882c58dc4049dbb4, type: 2}
   rseOnHideMouseCursor: {fileID: 11400000, guid: dfd0f540889f6374fa1c8b6d1fd64f5a, type: 2}
+  rseOnNeedCursor: {fileID: 11400000, guid: 2de99363488ebd94d8ab01043cef0a28, type: 2}
   rseOnSetFocus: {fileID: 11400000, guid: 7a11769b798858b44ae4e80ba54f9756, type: 2}
   rseOnResetCursor: {fileID: 11400000, guid: 3b13ba4a06559cb478a86c3cf4ac8d54, type: 2}
   rseOnResetFocus: {fileID: 11400000, guid: 0b5f77e2d22436549bb64fcd53c34a54, type: 2}

@@ -35,6 +35,9 @@ public class S_UIMenu : MonoBehaviour
     [SerializeField] private RSE_OnHideMouseCursor rseOnHideMouseCursor;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnNeedCursor rseOnNeedCursor;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSE_OnLoadScene rseOnLoadScene;
 
     [TabGroup("Outputs")]
@@ -68,6 +71,7 @@ public class S_UIMenu : MonoBehaviour
         rseOnEscapeInput.action += CloseEscape;
 
         if (Gamepad.current == null) rseOnShowMouseCursor.Call();
+        rseOnNeedCursor.Call(true);
 
         isTransit = false;
 
@@ -94,6 +98,7 @@ public class S_UIMenu : MonoBehaviour
             rsePlayAudio.Call(audioWindow);
 
             rseOnHideMouseCursor.Call();
+            rseOnNeedCursor.Call(false);
 
             rseOnCloseAllWindows.Call();
             rsoNavigation.Value.selectableDefault = null;

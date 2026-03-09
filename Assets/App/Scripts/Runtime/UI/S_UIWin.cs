@@ -22,6 +22,9 @@ public class S_UIWin : MonoBehaviour
     [SerializeField] private RSE_OnHideMouseCursor rseOnHideMouseCursor;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnNeedCursor rseOnNeedCursor;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
     [TabGroup("Outputs")]
@@ -49,6 +52,7 @@ public class S_UIWin : MonoBehaviour
         isTransit = false;
 
         if (Gamepad.current == null) rseOnShowMouseCursor.Call();
+        rseOnNeedCursor.Call(true);
 
         rsePlayAudio.Call(audioWindow);
     }
@@ -68,6 +72,7 @@ public class S_UIWin : MonoBehaviour
                 rsoNavigation.Value.selectableFocus = null;
 
                 rseOnHideMouseCursor.Call();
+                rseOnNeedCursor.Call(false);
 
                 StartCoroutine(S_Utils.DelayRealTime(0.8f, () =>
                 {
@@ -93,6 +98,7 @@ public class S_UIWin : MonoBehaviour
                 rsoNavigation.Value.selectableFocus = null;
 
                 rseOnHideMouseCursor.Call();
+                rseOnNeedCursor.Call(false);
 
                 StartCoroutine(S_Utils.DelayRealTime(0.8f, () =>
                 {

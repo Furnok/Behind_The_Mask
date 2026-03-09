@@ -5855,6 +5855,7 @@ MonoBehaviour:
     scenePath: Assets/App/Scenes/SC_MainMenu.unity
   rseOnShowMouseCursor: {fileID: 11400000, guid: 05d1a18ef32d0254882c58dc4049dbb4, type: 2}
   rseOnHideMouseCursor: {fileID: 11400000, guid: dfd0f540889f6374fa1c8b6d1fd64f5a, type: 2}
+  rseOnNeedCursor: {fileID: 11400000, guid: 2de99363488ebd94d8ab01043cef0a28, type: 2}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   rseOnFadeOut: {fileID: 11400000, guid: bc8e79bbd9547214c9132a9ff5afe288, type: 2}
   rseStopAllAudio: {fileID: 11400000, guid: 9f87ef9a82d192e4b93ecf8bb4b75785, type: 2}
@@ -5964,6 +5965,7 @@ MonoBehaviour:
     scenePath: Assets/App/Scenes/SC_MainMenu.unity
   rseOnShowMouseCursor: {fileID: 11400000, guid: 05d1a18ef32d0254882c58dc4049dbb4, type: 2}
   rseOnHideMouseCursor: {fileID: 11400000, guid: dfd0f540889f6374fa1c8b6d1fd64f5a, type: 2}
+  rseOnNeedCursor: {fileID: 11400000, guid: 2de99363488ebd94d8ab01043cef0a28, type: 2}
   rsePlayAudio: {fileID: 11400000, guid: f18ae13ce78bef5498a86c8d696c6239, type: 2}
   rseOnFadeOut: {fileID: 11400000, guid: bc8e79bbd9547214c9132a9ff5afe288, type: 2}
   rseStopAllAudio: {fileID: 11400000, guid: 9f87ef9a82d192e4b93ecf8bb4b75785, type: 2}
@@ -15877,6 +15879,7 @@ MonoBehaviour:
   rseOnQuitGame: {fileID: 11400000, guid: bec6c0ff7da6d5148bc028b0554817af, type: 2}
   rseOnShowMouseCursor: {fileID: 11400000, guid: 05d1a18ef32d0254882c58dc4049dbb4, type: 2}
   rseOnHideMouseCursor: {fileID: 11400000, guid: dfd0f540889f6374fa1c8b6d1fd64f5a, type: 2}
+  rseOnNeedCursor: {fileID: 11400000, guid: 2de99363488ebd94d8ab01043cef0a28, type: 2}
   rseOnLoadScene: {fileID: 11400000, guid: 4083bca5e19e93f44b63273be32064b6, type: 2}
   rseStopAllAudio: {fileID: 11400000, guid: 9f87ef9a82d192e4b93ecf8bb4b75785, type: 2}
   rseOnEscapeInput: {fileID: 11400000, guid: 59753f43be0f3f64381174235d4e6bea, type: 2}

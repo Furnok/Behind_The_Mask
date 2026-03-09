@@ -17,10 +17,6 @@ public class S_GameManager : MonoBehaviour
     [TabGroup("Settings")]
     [SerializeField] private S_ClassAudio audioGame;
 
-    //[Header("References")]
-
-    //[Header("Inputs")]
-
     [TabGroup("Outputs")]
     [SerializeField] private RSE_OnMainMenu rseOnMainMenu;
 
@@ -34,7 +30,21 @@ public class S_GameManager : MonoBehaviour
     [SerializeField] private RSE_PlayAudio rsePlayAudio;
 
     [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnShowMouseCursor rseOnShowMouseCursor;
+
+    [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnHideMouseCursor rseOnHideMouseCursor;
+
+    [TabGroup("Outputs")]
+    [SerializeField] private RSE_OnNeedCursor rseOnNeedCursor;
+
+    [TabGroup("Outputs")]
     [SerializeField] private RSO_SettingsSaved rsoSettingsSaved;
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 120;
+    }
 
     private void OnDisable()
     {
@@ -45,6 +55,8 @@ public class S_GameManager : MonoBehaviour
     {
         if (isMainMenu)
         {
+            rseOnShowMouseCursor.Call();
+            rseOnNeedCursor.Call(true);
             rseOnMainMenu.Call();
             rsePlayAudio.Call(audioMainMenu);
         }
@@ -54,10 +66,14 @@ public class S_GameManager : MonoBehaviour
 
             if (isMenu)
             {
+                rseOnShowMouseCursor.Call();
+                rseOnNeedCursor.Call(true);
                 rseOnMenu.Call();
             }
             else
             {
+                rseOnHideMouseCursor.Call();
+                rseOnNeedCursor.Call(false);
                 rseOnGame.Call();
             }
         }

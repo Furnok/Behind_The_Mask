@@ -20,6 +20,9 @@ public class S_CursorManager : MonoBehaviour
     [SerializeField] private RSE_OnHideMouseCursor rseOnHideMouseCursor;
 
     [TabGroup("Inputs")]
+    [SerializeField] private RSE_OnNeedCursor rseOnNeedCursor;
+
+    [TabGroup("Inputs")]
     [SerializeField] private RSE_OnSetFocus rseOnSetFocus;
 
     [TabGroup("Inputs")]
@@ -43,12 +46,10 @@ public class S_CursorManager : MonoBehaviour
     [TabGroup("Outputs")]
     [SerializeField] private RSO_Device rsoDevice;
 
+    private bool needCursor = false;
+
     private void Awake()
     {
-        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
-
-        HideMouseCursor();
-
         if (Gamepad.current != null) Device(Gamepad.current);
         else rsoDevice.Value = S_EnumDevice.KeyboardMouse;
     }
@@ -58,6 +59,7 @@ public class S_CursorManager : MonoBehaviour
         InputSystem.onDeviceChange += OnDeviceChange;
         rseOnShowMouseCursor.action += ShowMouseCursor;
         rseOnHideMouseCursor.action += HideMouseCursor;
+        rseOnNeedCursor.action += NeedCursor;
         rseOnSetFocus.action += SetFocus;
         rseOnResetCursor.action += ResetCursor;
         rseOnResetFocus.action += ResetFocus;
@@ -72,6 +74,7 @@ public class S_CursorManager : MonoBehaviour
         InputSystem.onDeviceChange -= OnDeviceChange;
         rseOnShowMouseCursor.action -= ShowMouseCursor;
         rseOnHideMouseCursor.action -= HideMouseCursor;
+        rseOnNeedCursor.action -= NeedCursor;
         rseOnSetFocus.action -= SetFocus;
         rseOnResetCursor.action -= ResetCursor;
         rseOnResetFocus.action -= ResetFocus;
@@ -113,7 +116,11 @@ public class S_CursorManager : MonoBehaviour
                 ResetFocus();
 
                 rsoDevice.Value = S_EnumDevice.KeyboardMouse;
-                ShowMouseCursor();
+
+                if (needCursor)
+                {
+                    ShowMouseCursor();
+                }
             }
         }
 
@@ -134,6 +141,11 @@ public class S_CursorManager : MonoBehaviour
         Cursor.visible = false;
 
         Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+    }
+
+    private void NeedCursor(bool value)
+    {
+        needCursor = value;
     }
 
     private void MouseEnter(Selectable uiElement)
