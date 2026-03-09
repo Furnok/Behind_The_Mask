@@ -33,6 +33,11 @@ public class S_PlayerRotation : MonoBehaviour
 
     private void Update()
     {
+        CameraRotate();
+    }
+
+    private void CameraRotate()
+    {
         _currentYaw += _lookInput.x * _playerSettings.Value.Sensitivity;
 
         transform.rotation = Quaternion.Euler(0f, _currentYaw, 0f);
