@@ -13,6 +13,10 @@ public class S_PlayerMask : MonoBehaviour
     [SerializeField] Transform _maskStartLeftAnchor;
     [SerializeField] Transform _maskMidAnchor;
     [SerializeField] float _equipRotateZ = 90f;
+    [SerializeField] Transform _maskOutFinalAnchor;
+    [SerializeField] Transform _maskOutStartLeftAnchor;
+    [SerializeField] Transform _maskOutMidAnchor;
+    [SerializeField] float _equipOutRotateZ = 90f;
 
     [Header("Inputs")]
     [SerializeField] RSE_OnPickUpMask _onPickUpMask;
@@ -119,9 +123,10 @@ public class S_PlayerMask : MonoBehaviour
         {
             if (_coroutineMask != null) return;
 
+            StartCoroutine(MaskUnequippedCoroutine(_playerCurrentMaskEquipped.Value));
+
             _playerCurrentMaskEquipped.Value = Mask.None;
 
-            UpdateMaskVisuals(Mask.None);
             rseOnEquippedMaskUI.Call(index);
         }
         else
@@ -170,7 +175,16 @@ public class S_PlayerMask : MonoBehaviour
         var t = go.transform;
 
         foreach (var kvp in _masksFrontCam)
-            kvp.Value.SetActive(kvp.Key == mask);
+        {
+            if (kvp.Key == _playerCurrentMaskEquipped.Value)
+            {
+                StartCoroutine(MaskUnequippedCoroutine(kvp.Key));
+            }
+            else
+            {
+                kvp.Value.SetActive(kvp.Key == mask);
+            }
+        }
 
         t.DOKill();
 
@@ -187,5 +201,32 @@ public class S_PlayerMask : MonoBehaviour
         Sequence s = DOTween.Sequence();
         s.Join(t.DOLocalPath(path, duration, PathType.CatmullRom).SetEase(Ease.OutCubic));
         s.Join(t.DOLocalRotateQuaternion(_maskFinalAnchor.localRotation, duration).SetEase(Ease.OutCubic));
+    }
+
+    IEnumerator MaskUnequippedCoroutine(Mask mask)
+    {
+        float duration = _playerSettings.Value.MaskDelayToUnequipped;
+        PlayUnequippedMask(mask, duration);
+        yield return new WaitForSeconds(duration);
+        var go = _masksFrontCam[mask];
+        go.transform.position = _maskOutFinalAnchor.position;
+        go.transform.rotation = _maskOutFinalAnchor.rotation;
+        go.SetActive(false);
+    }
+
+    void PlayUnequippedMask(Mask mask, float duration)
+    {
+        var go = _masksFrontCam[mask];
+        var t = go.transform;
+        t.DOKill();
+        Vector3[] path = new Vector3[]
+        {
+        _maskOutStartLeftAnchor.localPosition,
+        _maskOutMidAnchor.localPosition,
+        _maskOutFinalAnchor.localPosition
+        };
+        Sequence s = DOTween.Sequence();
+        s.Join(t.DOLocalPath(path, duration, PathType.CatmullRom).SetEase(Ease.InCubic));
+        s.Join(t.DOLocalRotateQuaternion(_maskOutFinalAnchor.localRotation * Quaternion.Euler(0f, _equipOutRotateZ, 0f), duration).SetEase(Ease.InCubic));
     }
 }

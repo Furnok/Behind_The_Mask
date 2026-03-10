@@ -182,6 +182,9 @@ Transform:
   - {fileID: 3644780445367351511}
   - {fileID: 7437510275960477662}
   - {fileID: 6931354528839030280}
+  - {fileID: 7739144987517938542}
+  - {fileID: 8787087318611402263}
+  - {fileID: 8421266277013536037}
   m_Father: {fileID: 5940591338507866869}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2179124848608092959
@@ -286,6 +289,37 @@ Transform:
   m_Children:
   - {fileID: 1866412227723940244}
   m_Father: {fileID: 6288016406504403905}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3385536402099753755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8421266277013536037}
+  m_Layer: 6
+  m_Name: Anchor_EndOut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8421266277013536037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385536402099753755}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.572, y: 0, z: 0.026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8484321695895153953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3775607065687884649
 GameObject:
@@ -590,6 +624,37 @@ MonoBehaviour:
   _cameraRig: {fileID: 5940591338507866869}
   _playerIsMoving: {fileID: 11400000, guid: c3bb5e0a953cbf6479a1a4edcacff777, type: 2}
   _playerIsSprinting: {fileID: 11400000, guid: 6ff94bd999fe04444a5d23098ef6d2ff, type: 2}
+--- !u!1 &5002411520013382266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7739144987517938542}
+  m_Layer: 6
+  m_Name: Anchor_StartOut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7739144987517938542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002411520013382266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8484321695895153953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5670014013786371835
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +741,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7106147441253211833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8787087318611402263}
+  m_Layer: 6
+  m_Name: Anchor_MidOut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8787087318611402263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7106147441253211833}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.412, y: 0, z: 0.417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8484321695895153953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8099391173775306723
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +947,10 @@ MonoBehaviour:
   _maskStartLeftAnchor: {fileID: 3644780445367351511}
   _maskMidAnchor: {fileID: 7437510275960477662}
   _equipRotateZ: -90
+  _maskOutFinalAnchor: {fileID: 8421266277013536037}
+  _maskOutStartLeftAnchor: {fileID: 7739144987517938542}
+  _maskOutMidAnchor: {fileID: 8787087318611402263}
+  _equipOutRotateZ: 90
   _onPickUpMask: {fileID: 11400000, guid: 8416929ac1dc3e944acd0a0c2c62507c, type: 2}
   _onMask1Input: {fileID: 11400000, guid: 41c3301eda5dd9247a92d300842d687d, type: 2}
   _onMask2Input: {fileID: 11400000, guid: 43f11f637904fe043a1db3bcbd258eab, type: 2}

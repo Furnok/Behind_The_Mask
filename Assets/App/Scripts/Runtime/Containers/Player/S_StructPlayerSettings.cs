@@ -26,5 +26,6 @@ public struct S_StructPlayerSettings
 
     [Header("Masks Settings")]
     public float MaskDelayToEquipped;
+    public float MaskDelayToUnequipped;
 
 }
