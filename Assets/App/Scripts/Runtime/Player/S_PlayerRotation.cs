@@ -12,6 +12,7 @@ public class S_PlayerRotation : MonoBehaviour
 
     [Header("Outputs")]
     [SerializeField] SSO_PlayerSettings _playerSettings;
+    [SerializeField] RSO_GameInPause _gameInPause;
 
     Vector2 _lookInput = Vector2.zero;
     private float _currentYaw;
@@ -38,6 +39,8 @@ public class S_PlayerRotation : MonoBehaviour
 
     private void CameraRotate()
     {
+        if (_gameInPause.Value == true) return;
+
         _currentYaw += _lookInput.x * _playerSettings.Value.Sensitivity;
 
         transform.rotation = Quaternion.Euler(0f, _currentYaw, 0f);

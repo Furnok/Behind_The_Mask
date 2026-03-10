@@ -12,6 +12,7 @@ public class S_PlayerCameraPitch : MonoBehaviour
 
     [Header("Outputs")]
     [SerializeField] SSO_PlayerSettings _playerSettings;
+    [SerializeField] RSO_GameInPause _gameInPause;
 
     Vector2 _lookInput = Vector2.zero;
     float _currentPitch = 0f;
@@ -33,6 +34,8 @@ public class S_PlayerCameraPitch : MonoBehaviour
 
     private void Update()
     {
+        if(_gameInPause.Value == true) return;
+
         _currentPitch -= _lookInput.y * _playerSettings.Value.Sensitivity;
         _currentPitch = Mathf.Clamp(_currentPitch, _playerSettings.Value.MinPitchAngle, _playerSettings.Value.MaxPitchAngle);
 

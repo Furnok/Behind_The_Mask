@@ -586,6 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onLookInput: {fileID: 11400000, guid: c0acbd077146ec544977cd77832f9699, type: 2}
   _playerSettings: {fileID: 11400000, guid: 8cc4ba678eb7d4944a5c88680ffdf03f, type: 2}
+  _gameInPause: {fileID: 11400000, guid: add66a6f830801a4a98e365e80144383, type: 2}
 --- !u!114 &1065700257326293079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,6 +908,7 @@ MonoBehaviour:
   _camera: {fileID: 2183715599515162159}
   _onLookInput: {fileID: 11400000, guid: c0acbd077146ec544977cd77832f9699, type: 2}
   _playerSettings: {fileID: 11400000, guid: 8cc4ba678eb7d4944a5c88680ffdf03f, type: 2}
+  _gameInPause: {fileID: 11400000, guid: add66a6f830801a4a98e365e80144383, type: 2}
 --- !u!114 &4012831869044213176
 MonoBehaviour:
   m_ObjectHideFlags: 0
