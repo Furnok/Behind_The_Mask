@@ -34,7 +34,11 @@ public class S_PlayerCameraPitch : MonoBehaviour
 
     private void Update()
     {
-        if(_gameInPause.Value == true) return;
+        if (_gameInPause.Value)
+        {
+            _lookInput = Vector2.zero;
+            return;
+        }
 
         _currentPitch -= _lookInput.y * _playerSettings.Value.Sensitivity;
         _currentPitch = Mathf.Clamp(_currentPitch, _playerSettings.Value.MinPitchAngle, _playerSettings.Value.MaxPitchAngle);

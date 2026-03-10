@@ -39,7 +39,11 @@ public class S_PlayerRotation : MonoBehaviour
 
     private void CameraRotate()
     {
-        if (_gameInPause.Value == true) return;
+        if (_gameInPause.Value)
+        {
+            _lookInput = Vector2.zero;
+            return;
+        }
 
         _currentYaw += _lookInput.x * _playerSettings.Value.Sensitivity;
 
